@@ -11,6 +11,14 @@ target 'Marvel' do
   app_pods
 end
 
+target 'MarvelTests' do
+  app_pods
+end
+
+target 'MarvelUITests' do
+  app_pods
+end
+
 post_install do |installer|
   puts "Init configuration post install..."
   
