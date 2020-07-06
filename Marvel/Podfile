@@ -1,0 +1,25 @@
+platform :ios, '12.0'
+
+use_frameworks!
+inhibit_all_warnings!
+
+def app_pods
+  pod 'Alamofire'
+end
+
+target 'Marvel' do
+  app_pods
+end
+
+post_install do |installer|
+  puts "Init configuration post install..."
+  
+  require 'fileutils'
+  installer.pods_project.targets.each do |target|
+    if target.name == 'Pods-Marvel'
+      FileUtils.cp_r("Pods/Target Support Files/#{target.name}/#{target.name}-acknowledgements.plist", 'Marvel/Supporting Files/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+      puts "Create adknowledgement file"
+    end
+  end
+
+end
