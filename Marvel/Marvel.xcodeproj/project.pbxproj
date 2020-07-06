@@ -681,7 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20200706;
 				DEVELOPMENT_TEAM = L2P57FYFZ4;
-				INFOPLIST_FILE = Marvel/Info.plist;
+				INFOPLIST_FILE = "Marvel/Supporting Files/PRO/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -703,7 +703,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20200706;
 				DEVELOPMENT_TEAM = L2P57FYFZ4;
-				INFOPLIST_FILE = Marvel/Info.plist;
+				INFOPLIST_FILE = "Marvel/Supporting Files/PRO/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
