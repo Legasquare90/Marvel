@@ -15,6 +15,8 @@
 		326D425224B39B49007D645B /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D425124B39B49007D645B /* MarvelTests.swift */; };
 		326D425D24B39B49007D645B /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D425C24B39B49007D645B /* MarvelUITests.swift */; };
 		326D426C24B3A126007D645B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326D426B24B3A126007D645B /* Settings.bundle */; };
+		326D427624B3B287007D645B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427524B3B287007D645B /* Character.swift */; };
+		326D427724B3B287007D645B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427524B3B287007D645B /* Character.swift */; };
 		75575A52D131D2D07377BAF1 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EC4594E076CAEADBC67E5F /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,7 @@
 		326D425C24B39B49007D645B /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
 		326D425E24B39B49007D645B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326D426B24B3A126007D645B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		326D427524B3B287007D645B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		85A5C4677950800844FC47D0 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EC4594E076CAEADBC67E5F /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +181,7 @@
 			children = (
 				326D423A24B39B46007D645B /* AppDelegate.swift */,
 				326D423E24B39B46007D645B /* ViewController.swift */,
+				326D427124B3ADD0007D645B /* Core */,
 				326D427024B3AB0E007D645B /* UI */,
 			);
 			path = Code;
@@ -190,6 +194,38 @@
 				326D424524B39B49007D645B /* LaunchScreen.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		326D427124B3ADD0007D645B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				326D427324B3ADEA007D645B /* Network */,
+				326D427224B3ADDF007D645B /* DataStore */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		326D427224B3ADDF007D645B /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				326D427424B3AE33007D645B /* Model */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		326D427324B3ADEA007D645B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		326D427424B3AE33007D645B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				326D427524B3B287007D645B /* Character.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				326D423F24B39B46007D645B /* ViewController.swift in Sources */,
+				326D427624B3B287007D645B /* Character.swift in Sources */,
 				326D423B24B39B46007D645B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				326D425224B39B49007D645B /* MarvelTests.swift in Sources */,
+				326D427724B3B287007D645B /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -527,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -546,6 +584,7 @@
 				CURRENT_PROJECT_VERSION = 20200706;
 				DEVELOPMENT_TEAM = L2P57FYFZ4;
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +606,7 @@
 				CURRENT_PROJECT_VERSION = 20200706;
 				DEVELOPMENT_TEAM = L2P57FYFZ4;
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
