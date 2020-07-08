@@ -22,6 +22,12 @@
 		326D425D24B39B49007D645B /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D425C24B39B49007D645B /* MarvelUITests.swift */; };
 		326D426C24B3A126007D645B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 326D426B24B3A126007D645B /* Settings.bundle */; };
 		326D427624B3B287007D645B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427524B3B287007D645B /* Character.swift */; };
+		326D427924B3C5F9007D645B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427824B3C5F9007D645B /* APIManager.swift */; };
+		326D427A24B3C5F9007D645B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427824B3C5F9007D645B /* APIManager.swift */; };
+		326D427C24B3C95B007D645B /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427B24B3C95B007D645B /* BaseRouter.swift */; };
+		326D427D24B3C95B007D645B /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427B24B3C95B007D645B /* BaseRouter.swift */; };
+		326D427F24B3CA8C007D645B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427E24B3CA8C007D645B /* Constants.swift */; };
+		326D428024B3CA8C007D645B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D427E24B3CA8C007D645B /* Constants.swift */; };
 		326D428324B3DCFC007D645B /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428224B3DCFC007D645B /* Crypto.swift */; };
 		326D428424B3DCFC007D645B /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428224B3DCFC007D645B /* Crypto.swift */; };
 		326D428624B3E145007D645B /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428524B3E145007D645B /* CryptoTests.swift */; };
@@ -71,6 +77,9 @@
 		326D425E24B39B49007D645B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326D426B24B3A126007D645B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		326D427524B3B287007D645B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		326D427824B3C5F9007D645B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		326D427B24B3C95B007D645B /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		326D427E24B3CA8C007D645B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		326D428224B3DCFC007D645B /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		326D428524B3E145007D645B /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		61381F8E20D943A772C1CF99 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				326D423A24B39B46007D645B /* AppDelegate.swift */,
+				326D427E24B3CA8C007D645B /* Constants.swift */,
 				326D423E24B39B46007D645B /* ViewController.swift */,
 				326D427124B3ADD0007D645B /* Core */,
 				326D427024B3AB0E007D645B /* UI */,
@@ -250,6 +260,8 @@
 		326D427324B3ADEA007D645B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				326D427824B3C5F9007D645B /* APIManager.swift */,
+				326D427B24B3C95B007D645B /* BaseRouter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -533,13 +545,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326D427924B3C5F9007D645B /* APIManager.swift in Sources */,
 				326D423F24B39B46007D645B /* ViewController.swift in Sources */,
 				325BB9B424B64FA000912AC9 /* Link.swift in Sources */,
 				325BB9B824B6501E00912AC9 /* Serie.swift in Sources */,
+				326D427C24B3C95B007D645B /* BaseRouter.swift in Sources */,
 				325BB9BA24B6504E00912AC9 /* Comic.swift in Sources */,
 				326D427624B3B287007D645B /* Character.swift in Sources */,
 				326D423B24B39B46007D645B /* AppDelegate.swift in Sources */,
 				326D428324B3DCFC007D645B /* Crypto.swift in Sources */,
+				326D427F24B3CA8C007D645B /* Constants.swift in Sources */,
 				325BB9B024B64E5C00912AC9 /* Story.swift in Sources */,
 				325BB9B224B64EC800912AC9 /* Thumbnail.swift in Sources */,
 				325BB9B624B64FD000912AC9 /* Event.swift in Sources */,
@@ -551,8 +566,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				326D428424B3DCFC007D645B /* Crypto.swift in Sources */,
+				326D428024B3CA8C007D645B /* Constants.swift in Sources */,
+				326D427A24B3C5F9007D645B /* APIManager.swift in Sources */,
 				326D428624B3E145007D645B /* CryptoTests.swift in Sources */,
 				326D425224B39B49007D645B /* MarvelTests.swift in Sources */,
+				326D427D24B3C95B007D645B /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
