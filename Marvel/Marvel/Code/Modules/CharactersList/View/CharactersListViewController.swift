@@ -39,6 +39,7 @@ class CharactersListViewController: UIViewController {
     }
 
     @IBAction func textFieldDidChange(_ sender: Any) {
+        presenter.filterCharacters(search: searchTextField.text ?? "")
     }
 }
 

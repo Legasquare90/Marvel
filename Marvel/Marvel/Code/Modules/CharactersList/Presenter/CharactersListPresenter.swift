@@ -9,6 +9,11 @@ import Foundation
 
 class CharactersListPresenter: NSObject, CharactersListPresenterInput {
 
+    private var filteredCharacters: [Character]?
+    private var filterContent = false
+    
+    // MARK: - Architecture
+
     private lazy var interactor: CharactersListInteractorInput = self.makeInteractor()
     private var viewInterface: CharactersListPresenterOutput?
     
@@ -20,16 +25,19 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
         self.viewInterface = viewInterface
     }
     
+    // MARK: - CharactersListPresenterInput
+
     func getCharacters() {
         interactor.getCharacters()
     }
     
     func countCharacters() -> Int {
-        return interactor.characters?.count ?? 0
+        return (filterContent ? filteredCharacters?.count : interactor.characters?.count) ?? 0
     }
     
     func getDesign(index: Int) -> CharacterCellDesign {
-        if let character = interactor.characters?[index] {
+        let characters = filterContent ? filteredCharacters : interactor.characters
+        if let character = characters?[index] {
             if let name = character.name, let thumbnail = character.thumbnail {
                 let imageURL = String(format: "%@.%@", (thumbnail.path ?? ""), (thumbnail.thumbnailExtension?.rawValue ?? ""))
                 return CharacterCellDesign(name: name, imageURL: imageURL)
@@ -38,7 +46,22 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
         return CharacterCellDesign()
     }
     
+    func filterCharacters(search: String) {
+        if search != "" {
+            filterContent = true
+            filteredCharacters = interactor.characters?.filter({
+                ($0.name?.lowercased().contains(search.lowercased()) ?? false)
+            })
+        } else {
+            filterContent = false
+            filteredCharacters = nil
+        }
+        viewInterface?.refreshView()
+    }
+    
 }
+
+// MARK: -
 
 extension CharactersListPresenter: CharactersListInteractorOutput {
     func charactersReceived() {

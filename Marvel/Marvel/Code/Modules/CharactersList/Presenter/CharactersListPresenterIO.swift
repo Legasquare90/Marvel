@@ -11,6 +11,7 @@ protocol CharactersListPresenterInput {
     func getCharacters()
     func countCharacters() -> Int
     func getDesign(index: Int) -> CharacterCellDesign
+    func filterCharacters(search: String)
 }
 
 protocol CharactersListPresenterOutput {
