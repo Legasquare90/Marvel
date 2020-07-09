@@ -26,5 +26,17 @@ class CryptoTests: XCTestCase {
         // Then
         expect(result) == hash
     }
+    
+    func testInvalidMD5() throws {
+        // Given
+        let str = "1abcd1234"
+        let hash = "thisHashIsWrong"
+        
+        // When
+        let result = md5Hash(str: str)
+        
+        // Then
+        expect(result) != hash
+    }
 
 }
