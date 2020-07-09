@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (5.2.1)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
   - Nimble (8.1.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
   - Nimble
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
     - Nimble
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
 
-PODFILE CHECKSUM: 295fddb7733badbeb9f5997f6b0400be3dd70a25
+PODFILE CHECKSUM: c3be23fa7e74662f38393c962d4a5d8ab8092512
 
 COCOAPODS: 1.9.3
