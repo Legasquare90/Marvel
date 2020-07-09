@@ -12,6 +12,9 @@ class CharactersListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
     
+    let offsetCollection: CGFloat = 32.0
+    let cellsPerRow = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 5
+
     // MARK: - Architecture
     
     private lazy var presenter: CharactersListPresenterInput = self.makePresenter()
@@ -47,7 +50,8 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120.0, height: 120.0)
+        let size = (collectionView.frame.size.width - offsetCollection) / CGFloat(cellsPerRow)
+        return CGSize(width: size, height: size)
     }
 }
 

@@ -25,6 +25,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         self.characterImageView.layer.cornerRadius = self.characterImageView.frame.size.height / 2
     }
     
