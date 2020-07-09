@@ -23,9 +23,12 @@
                                         <rect key="frame" x="12" y="8" width="390" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="n81-gz-BRQ"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.92455726859999998" green="0.1118937656" blue="0.14108610150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="XCg-i0-anb" firstAttribute="centerY" secondItem="U0N-qm-OMN" secondAttribute="centerY" id="Byg-MO-15S"/>
                                     <constraint firstAttribute="trailing" secondItem="XCg-i0-anb" secondAttribute="trailing" constant="12" id="aR6-xc-iE8"/>

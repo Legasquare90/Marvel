@@ -28,6 +28,9 @@ class CharactersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.placeholder = "characters_list_search_placeholder".localized
+        searchTextField.placeHolderColor = UIColor.darkGray
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCollectionViewCell")
@@ -35,6 +38,8 @@ class CharactersListViewController: UIViewController {
         presenter.getCharacters()
     }
 
+    @IBAction func textFieldDidChange(_ sender: Any) {
+    }
 }
 
 extension CharactersListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

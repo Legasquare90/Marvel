@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Marvel
+
+  Created by Jose Angel Cuadrado Mingo on 09/07/2020.
+  
+*/
+
+"characters_list_search_placeholder" = "Buscar...";
