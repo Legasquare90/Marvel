@@ -8,7 +8,11 @@
 import Foundation
 import Alamofire
 
-class APIManager {
+protocol APIManager {
+    func executeRequest<T>(request: URLRequestConvertible, completion: @escaping (T?, Error?) -> Void) where T: Codable
+}
+
+class AlamofireManager: APIManager {
     
     private let session: Alamofire.Session
     
@@ -16,13 +20,17 @@ class APIManager {
         self.session = session
     }
     
-    func executeRequest<T>(request: URLRequestConvertible, completion: @escaping (AFDataResponse<T>) -> Void) where T: Codable {
+    func executeRequest<T>(request: URLRequestConvertible, completion: @escaping (T?, Error?) -> Void) where T: Codable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(formatter)
         let _ = session.request(request).validate(statusCode: 200..<300).responseDecodable(of: T.self, decoder: decoder)  { response in
-            completion(response)
+            do {
+                try completion(response.result.get(), nil)
+            } catch let error {
+                completion(nil, error)
+            }
         }
     }
 
