@@ -28,16 +28,21 @@ class CharactersListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCollectionViewCell")
+        
+        presenter.getCharacters()
     }
 
 }
 
 extension CharactersListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.countCharacters()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCollectionViewCell", for: indexPath) as! CharacterCollectionViewCell
+        let design = presenter.getDesign(index: indexPath.row)
+        cell.setupCell(design: design)
         return cell
     }
     
@@ -47,6 +52,12 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
 }
 
 extension CharactersListViewController: CharactersListPresenterOutput {
+    func refreshView() {
+        collectionView.reloadData()
+    }
     
+    func showError(message: String) {
+        
+    }
 }
 

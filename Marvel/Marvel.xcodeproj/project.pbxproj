@@ -40,6 +40,8 @@
 		32E86EF824B72DD0007AB6E1 /* CharactersListPresenterIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E86EF724B72DD0007AB6E1 /* CharactersListPresenterIO.swift */; };
 		32E86EFA24B72DE2007AB6E1 /* CharactersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E86EF924B72DE2007AB6E1 /* CharactersListInteractor.swift */; };
 		32E86EFC24B72DF2007AB6E1 /* CharactersListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E86EFB24B72DF2007AB6E1 /* CharactersListInteractorIO.swift */; };
+		32E86F0524B7633A007AB6E1 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E86F0324B7633A007AB6E1 /* CharacterCollectionViewCell.swift */; };
+		32E86F0624B7633A007AB6E1 /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E86F0424B7633A007AB6E1 /* CharacterCollectionViewCell.xib */; };
 		4FDF41D496D410022DCAFE6E /* Pods_MarvelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0990DEE32B6CA6A91DDA8D7 /* Pods_MarvelUITests.framework */; };
 		75575A52D131D2D07377BAF1 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EC4594E076CAEADBC67E5F /* Pods_Marvel.framework */; };
 		7F8792D063512188E77BC04D /* Pods_MarvelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E23081E13B851B70E7EBA3A /* Pods_MarvelTests.framework */; };
@@ -102,6 +104,8 @@
 		32E86EF724B72DD0007AB6E1 /* CharactersListPresenterIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenterIO.swift; sourceTree = "<group>"; };
 		32E86EF924B72DE2007AB6E1 /* CharactersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractor.swift; sourceTree = "<group>"; };
 		32E86EFB24B72DF2007AB6E1 /* CharactersListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractorIO.swift; sourceTree = "<group>"; };
+		32E86F0324B7633A007AB6E1 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		32E86F0424B7633A007AB6E1 /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		61381F8E20D943A772C1CF99 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
 		85A5C4677950800844FC47D0 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		AFB512983B2501CE43B5F257 /* Pods-MarvelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelUITests/Pods-MarvelUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 				32E86EF024B72B5B007AB6E1 /* Modules */,
 				326D427024B3AB0E007D645B /* UI */,
 				326D428124B3DCA1007D645B /* Utils */,
+				32E86EFD24B76199007AB6E1 /* Views */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -381,6 +386,23 @@
 				32E86EFB24B72DF2007AB6E1 /* CharactersListInteractorIO.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		32E86EFD24B76199007AB6E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E86F0224B761CD007AB6E1 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32E86F0224B761CD007AB6E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				32E86F0324B7633A007AB6E1 /* CharacterCollectionViewCell.swift */,
+				32E86F0424B7633A007AB6E1 /* CharacterCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +517,7 @@
 				326D426C24B3A126007D645B /* Settings.bundle in Resources */,
 				326D424724B39B49007D645B /* LaunchScreen.storyboard in Resources */,
 				326D424424B39B49007D645B /* Assets.xcassets in Resources */,
+				32E86F0624B7633A007AB6E1 /* CharacterCollectionViewCell.xib in Resources */,
 				326D424224B39B46007D645B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32E86F0524B7633A007AB6E1 /* CharacterCollectionViewCell.swift in Sources */,
 				32E86EFC24B72DF2007AB6E1 /* CharactersListInteractorIO.swift in Sources */,
 				326D427924B3C5F9007D645B /* APIManager.swift in Sources */,
 				325BB9A924B6341400912AC9 /* CharacterServiceManager.swift in Sources */,

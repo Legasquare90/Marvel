@@ -8,9 +8,12 @@
 import Foundation
 
 protocol CharactersListPresenterInput {
-
+    func getCharacters()
+    func countCharacters() -> Int
+    func getDesign(index: Int) -> CharacterCellDesign
 }
 
 protocol CharactersListPresenterOutput {
-
+    func refreshView()
+    func showError(message: String)
 }
