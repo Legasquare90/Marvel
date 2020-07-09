@@ -15,9 +15,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0N-qm-OMN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-i0-anb">
+                                        <rect key="frame" x="12" y="8" width="390" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XCg-i0-anb" firstAttribute="centerY" secondItem="U0N-qm-OMN" secondAttribute="centerY" id="Byg-MO-15S"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCg-i0-anb" secondAttribute="trailing" constant="12" id="aR6-xc-iE8"/>
+                                    <constraint firstAttribute="height" constant="50" id="f0P-sK-jRO"/>
+                                    <constraint firstItem="XCg-i0-anb" firstAttribute="leading" secondItem="U0N-qm-OMN" secondAttribute="leading" constant="12" id="l48-ko-RyP"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="21F-Dc-VPD">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="spq-nl-ItZ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U0N-qm-OMN" secondAttribute="trailing" id="XSo-rw-xKG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="21F-Dc-VPD" secondAttribute="trailing" id="Yhu-p2-dS9"/>
+                            <constraint firstItem="21F-Dc-VPD" firstAttribute="top" secondItem="U0N-qm-OMN" secondAttribute="bottom" id="bmM-MO-nVT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="21F-Dc-VPD" secondAttribute="bottom" id="eWD-FU-b8j"/>
+                            <constraint firstItem="21F-Dc-VPD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ouy-iA-NeT"/>
+                            <constraint firstItem="U0N-qm-OMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xbX-Pm-Bcb"/>
+                            <constraint firstItem="U0N-qm-OMN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yPr-Q2-yfa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="21F-Dc-VPD" id="wn4-m6-L72"/>
+                        <outlet property="searchTextField" destination="XCg-i0-anb" id="Cgw-Ar-WGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
