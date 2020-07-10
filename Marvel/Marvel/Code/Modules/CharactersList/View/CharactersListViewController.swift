@@ -11,10 +11,14 @@ class CharactersListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var spinnerImageView: UIImageView!
     
     let offsetCollection: CGFloat = 32.0
     let cellsPerRow = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 5
 
+    var isLoadingViewHidden = false
+    
     // MARK: - Architecture
     
     private lazy var presenter: CharactersListPresenterInput = self.makePresenter()
@@ -34,6 +38,8 @@ class CharactersListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCollectionViewCell")
+        
+        spinnerImageView.startRotation()
         
         presenter.getCharacters()
     }
@@ -63,10 +69,21 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
 
 extension CharactersListViewController: CharactersListPresenterOutput {
     func refreshView() {
+        if !isLoadingViewHidden {
+            isLoadingViewHidden = true
+            spinnerImageView.stopRotation()
+            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: self.view.frame.size.height * 1.5)
+        }
+        
         collectionView.reloadData()
     }
     
     func showError(message: String) {
+        if !isLoadingViewHidden {
+            isLoadingViewHidden = true
+            spinnerImageView.stopRotation()
+            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: self.view.frame.size.height * 1.5)
+        }
         
     }
 }
