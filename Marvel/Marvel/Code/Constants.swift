@@ -34,3 +34,13 @@ struct APIKeys {
      */
     static let Private = "ae4ccc55f294697f67ff4e5126d2f7311cabc467"
 }
+
+/**
+ General constants
+ */
+struct Constants {
+    /**
+     Limit each request to Marvel API to return this number of contents
+     */
+    static let contentsPerRequest = 30
+}

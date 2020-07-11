@@ -8,7 +8,8 @@
 import Foundation
 
 protocol CharactersListInteractorInput {
-    var characters: [Character]? { get }
+    var characters: [Character] { get }
+    var nextPage: Int { get }
 
     func getCharacters()
 }

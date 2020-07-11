@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum CharacterEndpoint {
-    case getAllCharacters
+    case getAllCharacters(nextPage: Int)
 }
 
 class CharacterRouter : BaseRouter {
@@ -34,7 +34,12 @@ class CharacterRouter : BaseRouter {
 
     override var parameters: APIParams {
         switch endpoint {
-            default: return nil
+            case .getAllCharacters(let nextPage):
+                var dict: [String : AnyObject] = [:]
+                dict.updateValue(Constants.contentsPerRequest as AnyObject, forKey: "limit")
+                let offset = nextPage * Constants.contentsPerRequest
+                dict.updateValue(offset as AnyObject, forKey: "offset")
+                return dict
         }
     }
     

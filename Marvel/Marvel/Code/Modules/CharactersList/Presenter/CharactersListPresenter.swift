@@ -32,7 +32,7 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
     }
     
     func countCharacters() -> Int {
-        return (filterContent ? filteredCharacters?.count : interactor.characters?.count) ?? 0
+        return (filterContent ? filteredCharacters?.count : interactor.characters.count) ?? 0
     }
     
     func getDesign(index: Int) -> CharacterCellDesign {
@@ -49,7 +49,7 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
     func filterCharacters(search: String) {
         if search != "" {
             filterContent = true
-            filteredCharacters = interactor.characters?.filter({
+            filteredCharacters = interactor.characters.filter({
                 ($0.name?.lowercased().contains(search.lowercased()) ?? false)
             })
         } else {
@@ -57,6 +57,10 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
             filteredCharacters = nil
         }
         viewInterface?.refreshView()
+    }
+    
+    func isThereMoreCharacters() -> Bool {
+        return interactor.nextPage != 0
     }
     
 }

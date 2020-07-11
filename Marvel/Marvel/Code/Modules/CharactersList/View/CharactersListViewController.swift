@@ -44,6 +44,8 @@ class CharactersListViewController: UIViewController {
         presenter.getCharacters()
     }
 
+    // MARK: - IBActions
+
     @IBAction func textFieldDidChange(_ sender: Any) {
         presenter.filterCharacters(search: searchTextField.text ?? "")
     }
@@ -55,6 +57,11 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == presenter.countCharacters() - 3 {
+            if presenter.isThereMoreCharacters() {
+                presenter.getCharacters()
+            }
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCollectionViewCell", for: indexPath) as! CharacterCollectionViewCell
         let design = presenter.getDesign(index: indexPath.row)
         cell.setupCell(design: design)
