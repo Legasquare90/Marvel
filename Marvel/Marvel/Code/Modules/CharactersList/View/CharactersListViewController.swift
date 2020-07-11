@@ -45,6 +45,11 @@ class CharactersListViewController: UIViewController {
         presenter.getCharacters()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+    }
+    
     // MARK: - IBActions
 
     @IBAction func textFieldDidChange(_ sender: Any) {
@@ -70,7 +75,8 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.size.width - offsetCollection) / CGFloat(cellsPerRow)
+        let largeSide = UIDevice.current.orientation == .portrait ? collectionView.frame.size.width : collectionView.frame.size.height
+        let size = (largeSide - offsetCollection) / CGFloat(cellsPerRow)
         return CGSize(width: size, height: size)
     }
 }
@@ -80,7 +86,8 @@ extension CharactersListViewController: CharactersListPresenterOutput {
         if !isLoadingViewHidden {
             isLoadingViewHidden = true
             spinnerImageView.stopRotation()
-            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: self.view.frame.size.height * 1.5)
+            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
+            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
         }
         
         collectionView.reloadData()
@@ -90,7 +97,8 @@ extension CharactersListViewController: CharactersListPresenterOutput {
         if !isLoadingViewHidden {
             isLoadingViewHidden = true
             spinnerImageView.stopRotation()
-            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: self.view.frame.size.height * 1.5)
+            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
+            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
         }
         
         SwiftMessageBar.showMessage(withTitle: "error_title".localized, message: "error_message".localized, type: .error)
