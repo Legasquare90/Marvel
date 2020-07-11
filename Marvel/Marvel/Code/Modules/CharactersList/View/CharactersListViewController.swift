@@ -14,11 +14,13 @@ class CharactersListViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var spinnerImageView: UIImageView!
+    @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     
     let offsetCollection: CGFloat = 32.0
     let cellsPerRow = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 5
 
     var isLoadingViewHidden = false
+    var searchTimer: Timer?
     
     // MARK: - Architecture
     
@@ -32,6 +34,8 @@ class CharactersListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchIndicator.isHidden = true
         
         searchTextField.placeholder = "characters_list_search_placeholder".localized
         searchTextField.placeHolderColor = UIColor.darkGray
@@ -54,9 +58,20 @@ class CharactersListViewController: UIViewController {
 
     @IBAction func textFieldDidChange(_ sender: Any) {
         presenter.filterCharacters(search: searchTextField.text ?? "")
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchCharacter), userInfo: nil, repeats: false)
     }
     
     // MARK: - Other methods
+    
+    @objc func searchCharacter() {
+        if let search = searchTextField.text, search.count >= 3 {
+            if presenter.isThereMoreCharacters() {
+                searchIndicator.isHidden = false
+                presenter.searchCharacters(search: search)
+            }
+        }
+    }
     
     func showContentAfterLoad() {
         if !isLoadingViewHidden {
@@ -93,6 +108,10 @@ extension CharactersListViewController: CharactersListPresenterOutput {
     func refreshView() {
         showContentAfterLoad()
         collectionView.reloadData()
+    }
+    
+    func searchFinished() {
+        searchIndicator.isHidden = true
     }
     
     func showError() {

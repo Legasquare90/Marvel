@@ -49,7 +49,7 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
     func filterCharacters(search: String) {
         if search != "" {
             filterContent = true
-            filteredCharacters = interactor.characters.filter({
+            filteredCharacters = interactor.charactersWithExtraSearch.filter({
                 ($0.name?.lowercased().contains(search.lowercased()) ?? false)
             })
         } else {
@@ -59,9 +59,17 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
         viewInterface?.refreshView()
     }
         
+    func searchCharacters(search: String) {
+        interactor.searchCharacters(search: search)
+    }
+    
+    func isThereMoreCharacters() -> Bool {
+        return interactor.nextPage != 0
+    }
+    
     func checkPagination(index: Int) {
-        if index == countCharacters() - 3 {
-            if interactor.nextPage != 0 {
+        if !filterContent {
+            if index == countCharacters() - 3 && isThereMoreCharacters() {
                 getCharacters()
             }
         }
@@ -74,6 +82,11 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
 extension CharactersListPresenter: CharactersListInteractorOutput {
     func charactersReceived() {
         viewInterface?.refreshView()
+    }
+    
+    func searchFinished(search: String) {
+        filterCharacters(search: search)
+        viewInterface?.searchFinished()
     }
     
     func showError() {

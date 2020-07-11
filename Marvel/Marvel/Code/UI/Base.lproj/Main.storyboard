@@ -30,10 +30,16 @@
                                             <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="dmL-se-DpC"/>
                                         </connections>
                                     </textField>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gIU-Jg-Uhy">
+                                        <rect key="frame" x="370" y="59" width="20" height="20"/>
+                                        <color key="color" red="0.92455726859999998" green="0.1118937656" blue="0.14108610150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92455726859999998" green="0.1118937656" blue="0.14108610150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="gIU-Jg-Uhy" firstAttribute="trailing" secondItem="XCg-i0-anb" secondAttribute="trailing" constant="-12" id="Q2S-ry-pLg"/>
                                     <constraint firstAttribute="bottom" secondItem="XCg-i0-anb" secondAttribute="bottom" constant="8" id="TKL-QX-rFS"/>
+                                    <constraint firstItem="gIU-Jg-Uhy" firstAttribute="centerY" secondItem="XCg-i0-anb" secondAttribute="centerY" id="Wsv-So-aI2"/>
                                     <constraint firstAttribute="trailing" secondItem="XCg-i0-anb" secondAttribute="trailing" constant="12" id="aR6-xc-iE8">
                                         <variation key="heightClass=compact-widthClass=regular" constant="56"/>
                                     </constraint>
@@ -114,6 +120,7 @@
                     <connections>
                         <outlet property="collectionView" destination="21F-Dc-VPD" id="wn4-m6-L72"/>
                         <outlet property="loadingView" destination="3N6-pm-UJ4" id="4ms-yB-kZa"/>
+                        <outlet property="searchIndicator" destination="gIU-Jg-Uhy" id="FPo-nz-KCe"/>
                         <outlet property="searchTextField" destination="XCg-i0-anb" id="Cgw-Ar-WGw"/>
                         <outlet property="spinnerImageView" destination="CaG-Bv-6vb" id="Jzm-qC-h3H"/>
                     </connections>

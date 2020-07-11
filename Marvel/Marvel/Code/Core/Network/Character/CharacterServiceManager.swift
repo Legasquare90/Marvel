@@ -22,5 +22,14 @@ class CharacterServiceManager {
             completion(response?.data, error)
         }
     }
+    
+    func searchCharacters(search: String, completion:@escaping (_ characters: [Character]?, _ error: Error?) -> Void) {
+        let router = CharacterRouter(endpoint: .searchCharacters(search: search))
+
+        networkManager.executeRequest(request: router) { (response: CharacterDataWrapper?, error: Error?) in
+            completion(response?.data?.results, error)
+        }
+
+    }
 
 }
