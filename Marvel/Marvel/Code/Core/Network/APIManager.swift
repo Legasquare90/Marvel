@@ -15,6 +15,7 @@ protocol APIManager {
 class AlamofireManager: APIManager {
     
     private let session: Alamofire.Session
+    private let logger = Logger()
     private var retry = 0
     
     init(session: Alamofire.Session = .default) {
@@ -27,6 +28,7 @@ class AlamofireManager: APIManager {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(formatter)
         let _ = session.request(request).validate(statusCode: 200..<300).responseDecodable(of: T.self, decoder: decoder)  { response in
+            self.logger.logService(request: request.urlRequest, statusCode: response.response?.statusCode, data: response.data, error: response.error)
             do {
                 try completion(response.result.get(), nil)
                 self.retry = 0
