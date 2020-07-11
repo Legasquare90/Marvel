@@ -38,9 +38,13 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
-            result = characterContainer?.results
-            errorMessage = errorString
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+            if let container = characterContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
         }
         
         // Then
@@ -62,9 +66,13 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
-            result = characterContainer?.results
-            errorMessage = errorString
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+            if let container = characterContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
         }
         
         // Then
@@ -84,9 +92,13 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
-            result = characterContainer?.results
-            errorMessage = errorString
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+            if let container = characterContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
         }
         
         // Then
@@ -109,9 +121,13 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
-            result = characterContainer?.results
-            errorMessage = errorString
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+            if let container = characterContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
         }
         
         // Then

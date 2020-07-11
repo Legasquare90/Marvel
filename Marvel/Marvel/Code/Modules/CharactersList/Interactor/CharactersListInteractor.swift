@@ -20,9 +20,9 @@ class CharactersListInteractor: CharactersListInteractorInput {
     }
     
     func getCharacters() {
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorMessage) in
-            if let message = errorMessage {
-                self.presenter?.showError(message: message)
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+            if let _ = error {
+                self.presenter?.showError()
             } else {
                 if let container = characterContainer {
                     let contentsReceived = (self.nextPage * Constants.contentsPerRequest) + (container.count ?? 0)

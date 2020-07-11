@@ -7,3 +7,5 @@
 */
 
 "characters_list_search_placeholder" = "Search...";
+"error_message" = "There has been a problem with the server. Please, try again later.";
+"error_title" = "Error";

@@ -72,7 +72,7 @@ extension CharactersListPresenter: CharactersListInteractorOutput {
         viewInterface?.refreshView()
     }
     
-    func showError(message: String) {
-        viewInterface?.showError(message: message)
+    func showError() {
+        viewInterface?.showError()
     }
 }

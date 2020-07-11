@@ -15,11 +15,11 @@ class CharacterServiceManager {
         self.networkManager = networkManager
     }
 
-    func getCharacters(nextPage: Int, completion:@escaping (_ characters: CharacterDataContainer?, _ error: String?) -> Void) {
+    func getCharacters(nextPage: Int, completion:@escaping (_ characters: CharacterDataContainer?, _ error: Error?) -> Void) {
         let router = CharacterRouter(endpoint: .getAllCharacters(nextPage: nextPage))
 
         networkManager.executeRequest(request: router) { (response: CharacterDataWrapper?, error: Error?) in
-            completion(response?.data, error?.localizedDescription)
+            completion(response?.data, error)
         }
     }
 

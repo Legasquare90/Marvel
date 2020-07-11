@@ -17,5 +17,5 @@ protocol CharactersListPresenterInput {
 
 protocol CharactersListPresenterOutput {
     func refreshView()
-    func showError(message: String)
+    func showError()
 }

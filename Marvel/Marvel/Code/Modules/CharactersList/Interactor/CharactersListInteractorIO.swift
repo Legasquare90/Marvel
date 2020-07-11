@@ -16,5 +16,5 @@ protocol CharactersListInteractorInput {
 
 protocol CharactersListInteractorOutput {
     func charactersReceived()
-    func showError(message: String)
+    func showError()
 }

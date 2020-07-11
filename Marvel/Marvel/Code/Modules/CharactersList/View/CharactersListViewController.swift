@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftMessageBar
 
 class CharactersListViewController: UIViewController {
 
@@ -85,13 +86,14 @@ extension CharactersListViewController: CharactersListPresenterOutput {
         collectionView.reloadData()
     }
     
-    func showError(message: String) {
+    func showError() {
         if !isLoadingViewHidden {
             isLoadingViewHidden = true
             spinnerImageView.stopRotation()
             loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: self.view.frame.size.height * 1.5)
         }
         
+        SwiftMessageBar.showMessage(withTitle: "error_title".localized, message: "error_message".localized, type: .error)
     }
 }
 
