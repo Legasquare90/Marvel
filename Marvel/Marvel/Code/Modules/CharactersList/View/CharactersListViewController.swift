@@ -55,6 +55,18 @@ class CharactersListViewController: UIViewController {
     @IBAction func textFieldDidChange(_ sender: Any) {
         presenter.filterCharacters(search: searchTextField.text ?? "")
     }
+    
+    // MARK: - Other methods
+    
+    func showContentAfterLoad() {
+        if !isLoadingViewHidden {
+            isLoadingViewHidden = true
+            spinnerImageView.stopRotation()
+            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
+            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
+        }
+    }
+
 }
 
 extension CharactersListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -63,11 +75,7 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == presenter.countCharacters() - 3 {
-            if presenter.isThereMoreCharacters() {
-                presenter.getCharacters()
-            }
-        }
+        presenter.checkPagination(index: indexPath.row)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCollectionViewCell", for: indexPath) as! CharacterCollectionViewCell
         let design = presenter.getDesign(index: indexPath.row)
         cell.setupCell(design: design)
@@ -83,25 +91,12 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
 
 extension CharactersListViewController: CharactersListPresenterOutput {
     func refreshView() {
-        if !isLoadingViewHidden {
-            isLoadingViewHidden = true
-            spinnerImageView.stopRotation()
-            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
-            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
-        }
-        
+        showContentAfterLoad()
         collectionView.reloadData()
     }
     
     func showError() {
-        if !isLoadingViewHidden {
-            isLoadingViewHidden = true
-            spinnerImageView.stopRotation()
-            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
-            loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
-        }
-        
+        showContentAfterLoad()
         SwiftMessageBar.showMessage(withTitle: "error_title".localized, message: "error_message".localized, type: .error)
     }
 }
-

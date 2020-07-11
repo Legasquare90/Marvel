@@ -58,9 +58,13 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
         }
         viewInterface?.refreshView()
     }
-    
-    func isThereMoreCharacters() -> Bool {
-        return interactor.nextPage != 0
+        
+    func checkPagination(index: Int) {
+        if index == countCharacters() - 3 {
+            if interactor.nextPage != 0 {
+                getCharacters()
+            }
+        }
     }
     
 }
