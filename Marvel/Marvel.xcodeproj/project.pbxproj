@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32101E3D24BA6B7300EB5598 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32101E3C24BA6B7300EB5598 /* CharacterDetailViewController.swift */; };
+		32101E3F24BA6B9700EB5598 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32101E3E24BA6B9700EB5598 /* CharacterDetailPresenter.swift */; };
+		32101E4124BA6BA500EB5598 /* CharacterDetailPresenterIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32101E4024BA6BA500EB5598 /* CharacterDetailPresenterIO.swift */; };
+		32101E4324BA6BB800EB5598 /* CharacterDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32101E4224BA6BB800EB5598 /* CharacterDetailInteractor.swift */; };
+		32101E4524BA6BC900EB5598 /* CharacterDetailInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32101E4424BA6BC900EB5598 /* CharacterDetailInteractorIO.swift */; };
 		321AE66924B7034F005A9DC1 /* Hulk.json in Resources */ = {isa = PBXBuildFile; fileRef = 321AE66824B7034F005A9DC1 /* Hulk.json */; };
 		323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */; };
 		323CFE6424B680160030E12B /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6324B680160030E12B /* NetworkManagerMock.swift */; };
@@ -79,6 +84,11 @@
 /* Begin PBXFileReference section */
 		1D5AC41F59E6D4CD5A2F3216 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		2E23081E13B851B70E7EBA3A /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32101E3C24BA6B7300EB5598 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		32101E3E24BA6B9700EB5598 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		32101E4024BA6BA500EB5598 /* CharacterDetailPresenterIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenterIO.swift; sourceTree = "<group>"; };
+		32101E4224BA6BB800EB5598 /* CharacterDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractor.swift; sourceTree = "<group>"; };
+		32101E4424BA6BC900EB5598 /* CharacterDetailInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractorIO.swift; sourceTree = "<group>"; };
 		321AE66824B7034F005A9DC1 /* Hulk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Hulk.json; sourceTree = "<group>"; };
 		323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerTests.swift; sourceTree = "<group>"; };
 		323CFE6324B680160030E12B /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
@@ -189,6 +199,42 @@
 				AFB512983B2501CE43B5F257 /* Pods-MarvelUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		32101E3824BA6B3F00EB5598 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				32101E3B24BA6B5500EB5598 /* Interactor */,
+				32101E3A24BA6B5000EB5598 /* Presenter */,
+				32101E3924BA6B4B00EB5598 /* View */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		32101E3924BA6B4B00EB5598 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32101E3C24BA6B7300EB5598 /* CharacterDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32101E3A24BA6B5000EB5598 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				32101E3E24BA6B9700EB5598 /* CharacterDetailPresenter.swift */,
+				32101E4024BA6BA500EB5598 /* CharacterDetailPresenterIO.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		32101E3B24BA6B5500EB5598 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				32101E4224BA6BB800EB5598 /* CharacterDetailInteractor.swift */,
+				32101E4424BA6BC900EB5598 /* CharacterDetailInteractorIO.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		321AE66724B7031F005A9DC1 /* Files */ = {
@@ -439,6 +485,7 @@
 		32E86EF024B72B5B007AB6E1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				32101E3824BA6B3F00EB5598 /* CharacterDetail */,
 				324DE7E824BA52D80078E1C4 /* Base */,
 				32E86EF124B72B77007AB6E1 /* CharactersList */,
 			);
@@ -768,11 +815,14 @@
 				326D427924B3C5F9007D645B /* APIManager.swift in Sources */,
 				325BB9A924B6341400912AC9 /* CharacterServiceManager.swift in Sources */,
 				326D423F24B39B46007D645B /* CharactersListViewController.swift in Sources */,
+				32101E4524BA6BC900EB5598 /* CharacterDetailInteractorIO.swift in Sources */,
 				32E86F1E24B7D21E007AB6E1 /* UITextFieldExtension.swift in Sources */,
 				325BB9B424B64FA000912AC9 /* Link.swift in Sources */,
 				324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */,
 				325BB9B824B6501E00912AC9 /* Serie.swift in Sources */,
 				326D427C24B3C95B007D645B /* BaseRouter.swift in Sources */,
+				32101E4324BA6BB800EB5598 /* CharacterDetailInteractor.swift in Sources */,
+				32101E4124BA6BA500EB5598 /* CharacterDetailPresenterIO.swift in Sources */,
 				32E86F1C24B7CACB007AB6E1 /* StringExtension.swift in Sources */,
 				32E86EFA24B72DE2007AB6E1 /* CharactersListInteractor.swift in Sources */,
 				325BB9AC24B6343200912AC9 /* CharacterRouter.swift in Sources */,
@@ -780,10 +830,12 @@
 				326D427624B3B287007D645B /* Character.swift in Sources */,
 				326D423B24B39B46007D645B /* AppDelegate.swift in Sources */,
 				326D428324B3DCFC007D645B /* Crypto.swift in Sources */,
+				32101E3F24BA6B9700EB5598 /* CharacterDetailPresenter.swift in Sources */,
 				326D427F24B3CA8C007D645B /* Constants.swift in Sources */,
 				32E86EF624B72DBE007AB6E1 /* CharactersListPresenter.swift in Sources */,
 				325BB9B024B64E5C00912AC9 /* Story.swift in Sources */,
 				324DE7EA24BA52EC0078E1C4 /* BaseViewController.swift in Sources */,
+				32101E3D24BA6B7300EB5598 /* CharacterDetailViewController.swift in Sources */,
 				32E86EF824B72DD0007AB6E1 /* CharactersListPresenterIO.swift in Sources */,
 				325BB9B224B64EC800912AC9 /* Thumbnail.swift in Sources */,
 				325BB9B624B64FD000912AC9 /* Event.swift in Sources */,

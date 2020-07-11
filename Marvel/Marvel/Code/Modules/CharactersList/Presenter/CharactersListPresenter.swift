@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharactersListPresenter: NSObject, CharactersListPresenterInput {
+class CharactersListPresenter: CharactersListPresenterInput {
 
     var filteredCharacters: [Character]?
     var filterContent = false
@@ -22,7 +22,6 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInput {
     }
     
     init(viewInterface: CharactersListPresenterOutput?, interactor: CharactersListInteractorInput? = nil) {
-        super.init()
         self.viewInterface = viewInterface
         self.interactor = interactor ?? makeInteractor()
     }
