@@ -51,4 +51,19 @@ struct Character: Codable {
         case events
         case urls
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        characterID = try? container.decode(Int.self, forKey: .characterID)
+        name = try? container.decode(String.self, forKey: .name)
+        resultDescription = try? container.decode(String.self, forKey: .resultDescription)
+        modified = try? container.decode(Date.self, forKey: .modified)
+        thumbnail = try? container.decode(Thumbnail.self, forKey: .thumbnail)
+        resourceURI = try? container.decode(String.self, forKey: .resourceURI)
+        comics = try? container.decode(ComicsCollection.self, forKey: .comics)
+        series = try? container.decode(SeriesCollection.self, forKey: .series)
+        stories = try? container.decode(StoriesCollection.self, forKey: .stories)
+        events = try? container.decode(EventsCollection.self, forKey: .events)
+        urls = try? container.decode(Array<Link>.self, forKey: .urls)
+    }
 }

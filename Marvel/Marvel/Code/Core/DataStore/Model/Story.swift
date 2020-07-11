@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum ItemType: String, Codable {
-    case cover = "cover"
-    case empty = ""
-    case interiorStory = "interiorStory"
-}
-
 struct StoriesCollection: Codable {
     let available: Int?
     let collectionURI: String?
@@ -23,5 +17,5 @@ struct StoriesCollection: Codable {
 struct Story: Codable {
     let resourceURI: String?
     let name: String?
-    let type: ItemType?
+    let type: String?
 }

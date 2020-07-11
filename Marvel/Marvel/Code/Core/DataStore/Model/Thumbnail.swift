@@ -10,6 +10,7 @@ import Foundation
 enum Extension: String, Codable {
     case gif = "gif"
     case jpg = "jpg"
+    case png = "png"
 }
 
 struct Thumbnail: Codable {
