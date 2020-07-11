@@ -13,15 +13,16 @@ class CharactersListInteractor: CharactersListInteractorInput {
     var charactersWithExtraSearch: [Character] = []
     var nextPage: Int = 0
     
-    private var characterServiceManager = CharacterServiceManager()
+    private var characterServiceManager: CharacterServiceManager?
     private var presenter: CharactersListInteractorOutput?
 
-    init(presenter: CharactersListInteractorOutput) {
+    init(presenter: CharactersListInteractorOutput?, characterServiceManager: CharacterServiceManager? = nil) {
         self.presenter = presenter
+        self.characterServiceManager = characterServiceManager ?? CharacterServiceManager()
     }
     
     func getCharacters() {
-        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, error) in
+        characterServiceManager?.getCharacters(nextPage: nextPage) { (characterContainer, error) in
             if let _ = error {
                 self.presenter?.showError()
             } else {
@@ -41,7 +42,7 @@ class CharactersListInteractor: CharactersListInteractorInput {
     }
     
     func searchCharacters(search: String) {
-        characterServiceManager.searchCharacters(search: search) { (characters, error) in
+        characterServiceManager?.searchCharacters(search: search) { (characters, error) in
             if let _ = error {
                 self.presenter?.showError()
             } else {
@@ -53,7 +54,7 @@ class CharactersListInteractor: CharactersListInteractorInput {
         }
     }
     
-    private func addNewCharacters(charactersReceived: [Character]) {
+    func addNewCharacters(charactersReceived: [Character]) {
         charactersReceived.forEach { newCharacter in
             self.charactersWithExtraSearch.removeAll { character in
                 character.characterID == newCharacter.characterID

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessageBar
 
-class CharactersListViewController: UIViewController {
+class CharactersListViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!

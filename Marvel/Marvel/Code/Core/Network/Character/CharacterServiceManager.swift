@@ -29,7 +29,6 @@ class CharacterServiceManager {
         networkManager.executeRequest(request: router) { (response: CharacterDataWrapper?, error: Error?) in
             completion(response?.data?.results, error)
         }
-
     }
 
 }
