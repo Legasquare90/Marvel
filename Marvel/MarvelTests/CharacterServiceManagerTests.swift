@@ -30,6 +30,7 @@ class CharacterServiceManagerTests: XCTestCase {
 
     func testSuccessfulOneCharacterResult() throws {
         // Given
+        let nextPage = 0
         let hulkWrapper = DecoderFile().decodeFile(name: "Hulk", extensionFile: "json")
         let mock: APIManager = NetworkManagerMock(response: hulkWrapper, error: nil)
         let characterServiceManager = CharacterServiceManager(networkManager: mock)
@@ -37,8 +38,8 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters { (characters, errorString) in
-            result = characters
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
+            result = characterContainer?.results
             errorMessage = errorString
         }
         
@@ -53,6 +54,7 @@ class CharacterServiceManagerTests: XCTestCase {
     
     func testSuccessfulNoResult() throws {
         // Given
+        let nextPage = 0
         let noResultsWrapper = DecoderFile().decodeFile(name: "NoResults", extensionFile: "json")
         let mock: APIManager = NetworkManagerMock(response: noResultsWrapper, error: nil)
         let characterServiceManager = CharacterServiceManager(networkManager: mock)
@@ -60,8 +62,8 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters { (characters, errorString) in
-            result = characters
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
+            result = characterContainer?.results
             errorMessage = errorString
         }
         
@@ -74,6 +76,7 @@ class CharacterServiceManagerTests: XCTestCase {
     
     func testSuccessfulMultipleResult() throws {
         // Given
+        let nextPage = 0
         let multipleWrapper = DecoderFile().decodeFile(name: "MultipleResults", extensionFile: "json")
         let mock: APIManager = NetworkManagerMock(response: multipleWrapper, error: nil)
         let characterServiceManager = CharacterServiceManager(networkManager: mock)
@@ -81,8 +84,8 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters { (characters, errorString) in
-            result = characters
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
+            result = characterContainer?.results
             errorMessage = errorString
         }
         
@@ -98,6 +101,7 @@ class CharacterServiceManagerTests: XCTestCase {
     }
 
     func testErrorResult() throws {
+        let nextPage = 0
         let error = MyError.error(message: kMockErrorMessage)
         let mock: APIManager = NetworkManagerMock(response: nil, error: error)
         let characterServiceManager = CharacterServiceManager(networkManager: mock)
@@ -105,8 +109,8 @@ class CharacterServiceManagerTests: XCTestCase {
         // When
         var result: [Character]?
         var errorMessage: String?
-        characterServiceManager.getCharacters { (characters, errorString) in
-            result = characters
+        characterServiceManager.getCharacters(nextPage: nextPage) { (characterContainer, errorString) in
+            result = characterContainer?.results
             errorMessage = errorString
         }
         
