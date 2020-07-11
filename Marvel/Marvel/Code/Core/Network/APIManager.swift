@@ -15,6 +15,7 @@ protocol APIManager {
 class AlamofireManager: APIManager {
     
     private let session: Alamofire.Session
+    private var retry = 0
     
     init(session: Alamofire.Session = .default) {
         self.session = session
@@ -28,8 +29,15 @@ class AlamofireManager: APIManager {
         let _ = session.request(request).validate(statusCode: 200..<300).responseDecodable(of: T.self, decoder: decoder)  { response in
             do {
                 try completion(response.result.get(), nil)
+                self.retry = 0
             } catch let error {
-                completion(nil, error)
+                if response.response?.statusCode == 401 && self.retry < 5 {
+                    self.retry += 1
+                    self.executeRequest(request: request, completion: completion)
+                } else {
+                    completion(nil, error)
+                    self.retry = 0
+                }
             }
         }
     }
