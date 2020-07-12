@@ -17,6 +17,7 @@ end
 target 'MarvelTests' do
   commonPods
   pod 'Nimble'
+  pod 'iOSSnapshotTestCase'
 end
 
 target 'MarvelUITests' do
