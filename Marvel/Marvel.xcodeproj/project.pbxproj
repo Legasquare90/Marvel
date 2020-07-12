@@ -15,6 +15,7 @@
 		321AE66924B7034F005A9DC1 /* Hulk.json in Resources */ = {isa = PBXBuildFile; fileRef = 321AE66824B7034F005A9DC1 /* Hulk.json */; };
 		321F18FD24BB09380093F579 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F18FC24BB09380093F579 /* Navigator.swift */; };
 		321F18FF24BB09630093F579 /* CharactersListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F18FE24BB09630093F579 /* CharactersListNavigator.swift */; };
+		321F190224BB28B00093F579 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F190124BB28B00093F579 /* CharacterDetailNavigator.swift */; };
 		323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */; };
 		323CFE6424B680160030E12B /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6324B680160030E12B /* NetworkManagerMock.swift */; };
 		324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7D024B9C3330078E1C4 /* Logger.swift */; };
@@ -94,6 +95,7 @@
 		321AE66824B7034F005A9DC1 /* Hulk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Hulk.json; sourceTree = "<group>"; };
 		321F18FC24BB09380093F579 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		321F18FE24BB09630093F579 /* CharactersListNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListNavigator.swift; sourceTree = "<group>"; };
+		321F190124BB28B00093F579 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
 		323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerTests.swift; sourceTree = "<group>"; };
 		323CFE6324B680160030E12B /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		324DE7D024B9C3330078E1C4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				32101E3B24BA6B5500EB5598 /* Interactor */,
 				32101E3A24BA6B5000EB5598 /* Presenter */,
 				32101E3924BA6B4B00EB5598 /* View */,
+				321F190024BB289A0093F579 /* Navigator */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -257,6 +260,14 @@
 			isa = PBXGroup;
 			children = (
 				321F18FE24BB09630093F579 /* CharactersListNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		321F190024BB289A0093F579 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				321F190124BB28B00093F579 /* CharacterDetailNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -840,6 +851,7 @@
 				32101E4124BA6BA500EB5598 /* CharacterDetailPresenterIO.swift in Sources */,
 				32E86F1C24B7CACB007AB6E1 /* StringExtension.swift in Sources */,
 				32E86EFA24B72DE2007AB6E1 /* CharactersListInteractor.swift in Sources */,
+				321F190224BB28B00093F579 /* CharacterDetailNavigator.swift in Sources */,
 				325BB9AC24B6343200912AC9 /* CharacterRouter.swift in Sources */,
 				325BB9BA24B6504E00912AC9 /* Comic.swift in Sources */,
 				326D427624B3B287007D645B /* Character.swift in Sources */,

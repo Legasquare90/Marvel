@@ -26,6 +26,8 @@ class CharacterDetailViewController: BaseViewController {
 
     // MARK: - Architecture
     
+    private lazy var navigator: CharacterDetailNavigator = CharacterDetailNavigator(from: self)
+
     private lazy var presenter: CharacterDetailPresenterInput = self.makePresenter()
 
     private func makePresenter() -> CharacterDetailPresenterInput {
@@ -70,7 +72,7 @@ class CharacterDetailViewController: BaseViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        
+        navigator.navigate(style: .dismiss)
     }
     
     @IBAction func collectionsSegmentedControlDidChange(_ sender: Any) {
@@ -121,6 +123,8 @@ class CharacterDetailViewController: BaseViewController {
     }
 }
 
+// MARK: -
+
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -131,6 +135,14 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
 }
 
+// MARK: -
+
 extension CharacterDetailViewController: CharacterDetailPresenterOutput {
+
+}
+
+// MARK: -
+
+extension CharacterDetailViewController: CharacterDetailNavigatorDelegate {
 
 }

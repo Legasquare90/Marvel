@@ -1,5 +1,5 @@
 //
-//  CharactersListNavigator.swift
+//  CharacterDetailNavigator.swift
 //  Marvel
 //
 //  Created by Jose Angel Cuadrado Mingo on 12/07/2020.
@@ -7,24 +7,23 @@
 
 import UIKit
 
-protocol CharactersListNavigatorDelegate {
+protocol CharacterDetailNavigatorDelegate {
 
 }
 
-class CharactersListNavigator: Navigator {
+class CharacterDetailNavigator: Navigator {
     
     enum Destination {
         case none
-        case showDetail(character: Character)
     }
     
-    private var delegate: CharactersListNavigatorDelegate?
+    private var delegate: CharacterDetailNavigatorDelegate?
     private weak var origin: UIViewController?
 
     // MARK: - Initializer
 
     init(from origin: UIViewController) {
-        self.delegate = origin as? CharactersListNavigatorDelegate
+        self.delegate = origin as? CharacterDetailNavigatorDelegate
         self.origin = origin
     }
 
@@ -52,10 +51,6 @@ class CharactersListNavigator: Navigator {
     
     private func makeViewController(for destination: Destination) -> UIViewController? {
         switch destination {
-            case .showDetail(let character):
-                let controller: CharacterDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CharacterDetailViewController") as! CharacterDetailViewController
-                controller.character = character
-                return controller
             case .none:
                 return nil
         }
