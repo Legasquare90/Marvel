@@ -9,6 +9,18 @@ import UIKit
 
 class CharacterDetailViewController: BaseViewController {
 
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionsSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var comicCollectionLinkView: UIView!
+    @IBOutlet weak var comicCollesctionLinkLabel: UILabel!
+    @IBOutlet weak var detailLinkView: UIView!
+    @IBOutlet weak var detailLinkLabel: UILabel!
+    @IBOutlet weak var wikiLinkView: UIView!
+    @IBOutlet weak var wikiLinkLabel: UILabel!
+    
     // MARK: - Architecture
     
     private lazy var presenter: CharacterDetailPresenterInput = self.makePresenter()
@@ -21,8 +33,48 @@ class CharacterDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        characterImageView.layer.cornerRadius = characterImageView.frame.size.height / 2
+        
+        if UIDevice.current.orientation == .portrait {
+            self.nameLabel.textAlignment = .left
+            self.descriptionLabel.textAlignment = .left
+        } else {
+            self.nameLabel.textAlignment = .center
+            self.descriptionLabel.textAlignment = .center
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
+    // MARK: - IBActions
+
+    @IBAction func comicCollectionLinkAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func detailLinkAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func wikiLinkAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func collectionsSegmentedControlDidChange(_ sender: Any) {
+        
+    }
+}
+
+extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
 
 extension CharacterDetailViewController: CharacterDetailPresenterOutput {

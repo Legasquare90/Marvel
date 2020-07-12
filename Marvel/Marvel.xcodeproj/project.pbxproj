@@ -485,8 +485,8 @@
 		32E86EF024B72B5B007AB6E1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				32101E3824BA6B3F00EB5598 /* CharacterDetail */,
 				324DE7E824BA52D80078E1C4 /* Base */,
+				32101E3824BA6B3F00EB5598 /* CharacterDetail */,
 				32E86EF124B72B77007AB6E1 /* CharactersList */,
 			);
 			path = Modules;
