@@ -21,6 +21,8 @@
 		322137F224BB8F34004D7148 /* Series.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137F124BB8F34004D7148 /* Series.json */; };
 		322137F424BB8FCB004D7148 /* Stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137F324BB8FCB004D7148 /* Stories.json */; };
 		322137F724BBB046004D7148 /* CharacterDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137F624BBB046004D7148 /* CharacterDetailInteractorTests.swift */; };
+		322137F924BBB28C004D7148 /* CharacterDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137F824BBB28C004D7148 /* CharacterDetailInteractorMock.swift */; };
+		322137FB24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137FA24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift */; };
 		323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */; };
 		323CFE6424B680160030E12B /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6324B680160030E12B /* NetworkManagerMock.swift */; };
 		324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7D024B9C3330078E1C4 /* Logger.swift */; };
@@ -106,6 +108,8 @@
 		322137F124BB8F34004D7148 /* Series.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Series.json; sourceTree = "<group>"; };
 		322137F324BB8FCB004D7148 /* Stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Stories.json; sourceTree = "<group>"; };
 		322137F624BBB046004D7148 /* CharacterDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractorTests.swift; sourceTree = "<group>"; };
+		322137F824BBB28C004D7148 /* CharacterDetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractorMock.swift; sourceTree = "<group>"; };
+		322137FA24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenterTests.swift; sourceTree = "<group>"; };
 		323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerTests.swift; sourceTree = "<group>"; };
 		323CFE6324B680160030E12B /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		324DE7D024B9C3330078E1C4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				322137F624BBB046004D7148 /* CharacterDetailInteractorTests.swift */,
+				322137FA24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				323CFE6324B680160030E12B /* NetworkManagerMock.swift */,
 				324DE7DC24BA37FC0078E1C4 /* CharactersListInteractorMock.swift */,
 				324DE7E424BA4A300078E1C4 /* CharacterServiceManagerMock.swift */,
+				322137F824BBB28C004D7148 /* CharacterDetailInteractorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -909,7 +915,9 @@
 				324DE7E324BA48A80078E1C4 /* CharactersListInteractorTests.swift in Sources */,
 				324DE7E124BA39AF0078E1C4 /* CharactersListPresenterTests.swift in Sources */,
 				32E86EEB24B711E5007AB6E1 /* DecoderFiles.swift in Sources */,
+				322137F924BBB28C004D7148 /* CharacterDetailInteractorMock.swift in Sources */,
 				324DE7DD24BA37FC0078E1C4 /* CharactersListInteractorMock.swift in Sources */,
+				322137FB24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift in Sources */,
 				322137F724BBB046004D7148 /* CharacterDetailInteractorTests.swift in Sources */,
 				323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */,
 				324DE7E524BA4A300078E1C4 /* CharacterServiceManagerMock.swift in Sources */,
