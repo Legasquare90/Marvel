@@ -32,6 +32,14 @@ class CharactersListPresenter: CharactersListPresenterInput {
         interactor?.getCharacters()
     }
     
+    func getCharacter(index: Int) -> Character? {
+        if filterContent {
+            return filteredCharacters?[index]
+        } else {
+            return interactor?.characters[index]
+        }
+    }
+    
     func countCharacters() -> Int {
         return (filterContent ? filteredCharacters?.count : interactor?.characters.count) ?? 0
     }

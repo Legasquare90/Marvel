@@ -24,6 +24,8 @@ class CharactersListViewController: BaseViewController {
     
     // MARK: - Architecture
     
+    private lazy var navigator: CharactersListNavigator = CharactersListNavigator(from: self)
+
     private lazy var presenter: CharactersListPresenterInput = self.makePresenter()
 
     private func makePresenter() -> CharactersListPresenterInput {
@@ -84,6 +86,8 @@ class CharactersListViewController: BaseViewController {
 
 }
 
+// MARK: -
+
 extension CharactersListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.countCharacters()
@@ -102,7 +106,15 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
         let size = (largeSide - offsetCollection) / CGFloat(cellsPerRow)
         return CGSize(width: size, height: size)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let character = presenter.getCharacter(index: indexPath.row) {
+            navigator.navigate(to: .showDetail(character: character), style: .modal)
+        }
+    }
 }
+
+// MARK: -
 
 extension CharactersListViewController: CharactersListPresenterOutput {
     func refreshView() {
@@ -118,4 +130,10 @@ extension CharactersListViewController: CharactersListPresenterOutput {
         showContentAfterLoad()
         SwiftMessageBar.showMessage(withTitle: "error_title".localized, message: "error_message".localized, type: .error)
     }
+}
+
+// MARK: -
+
+extension CharactersListViewController: CharactersListNavigatorDelegate {
+
 }

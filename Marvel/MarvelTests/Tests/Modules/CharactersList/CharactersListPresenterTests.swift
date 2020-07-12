@@ -158,5 +158,33 @@ class CharactersListPresenterTests: XCTestCase {
         // Then
         expect(initialCount) < finalCount
     }
+    
+    func testGetCharacter() throws {
+        // Given
+        let index = 0
+        
+        // When
+        presenter?.getCharacters()
+        let character = presenter?.getCharacter(index: index)
+        
+        // Then
+        expect(character).notTo(beNil())
+        expect(character?.name) == "3-D Man"
+    }
+    
+    func testGetCharacterFiltered() throws {
+        // Given
+        let search = "Adam"
+        let index = 0
+        
+        // When
+        presenter?.getCharacters()
+        presenter?.filterCharacters(search: search)
+        let character = presenter?.getCharacter(index: index)
+        
+        // Then
+        expect(character).notTo(beNil())
+        expect(character?.name) == "Adam Destine"
+    }
 
 }

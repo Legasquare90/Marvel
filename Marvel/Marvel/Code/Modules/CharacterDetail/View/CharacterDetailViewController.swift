@@ -15,12 +15,14 @@ class CharacterDetailViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var comicCollectionLinkView: UIView!
-    @IBOutlet weak var comicCollesctionLinkLabel: UILabel!
+    @IBOutlet weak var comicCollectionLinkLabel: UILabel!
     @IBOutlet weak var detailLinkView: UIView!
     @IBOutlet weak var detailLinkLabel: UILabel!
     @IBOutlet weak var wikiLinkView: UIView!
     @IBOutlet weak var wikiLinkLabel: UILabel!
     
+    var character: Character!
+
     // MARK: - Architecture
     
     private lazy var presenter: CharacterDetailPresenterInput = self.makePresenter()
@@ -46,6 +48,8 @@ class CharacterDetailViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        nameLabel.text = character.name
     }
 
     // MARK: - IBActions

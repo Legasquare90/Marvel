@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharactersListPresenterInput {
     func getCharacters()
+    func getCharacter(index: Int) -> Character?
     func countCharacters() -> Int
     func getDesign(index: Int) -> CharacterCellDesign
     func filterCharacters(search: String)
