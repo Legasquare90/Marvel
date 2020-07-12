@@ -23,6 +23,7 @@
 		322137F724BBB046004D7148 /* CharacterDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137F624BBB046004D7148 /* CharacterDetailInteractorTests.swift */; };
 		322137F924BBB28C004D7148 /* CharacterDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137F824BBB28C004D7148 /* CharacterDetailInteractorMock.swift */; };
 		322137FB24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137FA24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift */; };
+		322137FE24BBC23B004D7148 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322137FD24BBC23B004D7148 /* SnapshotTests.swift */; };
 		323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */; };
 		323CFE6424B680160030E12B /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6324B680160030E12B /* NetworkManagerMock.swift */; };
 		324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7D024B9C3330078E1C4 /* Logger.swift */; };
@@ -110,6 +111,7 @@
 		322137F624BBB046004D7148 /* CharacterDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractorTests.swift; sourceTree = "<group>"; };
 		322137F824BBB28C004D7148 /* CharacterDetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractorMock.swift; sourceTree = "<group>"; };
 		322137FA24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenterTests.swift; sourceTree = "<group>"; };
+		322137FD24BBC23B004D7148 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerTests.swift; sourceTree = "<group>"; };
 		323CFE6324B680160030E12B /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		324DE7D024B9C3330078E1C4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
+		322137FC24BBC215004D7148 /* View (Snapshots) */ = {
+			isa = PBXGroup;
+			children = (
+				322137FD24BBC23B004D7148 /* SnapshotTests.swift */,
+			);
+			path = "View (Snapshots)";
+			sourceTree = "<group>";
+		};
 		323CFE6224B680050030E12B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 		324DE7D824BA347C0078E1C4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				322137FC24BBC215004D7148 /* View (Snapshots) */,
 				324DE7DA24BA34930078E1C4 /* Core */,
 				324DE7DE24BA39890078E1C4 /* Modules */,
 				324DE7D924BA34850078E1C4 /* Utils */,
@@ -919,6 +930,7 @@
 				324DE7DD24BA37FC0078E1C4 /* CharactersListInteractorMock.swift in Sources */,
 				322137FB24BBB3C1004D7148 /* CharacterDetailPresenterTests.swift in Sources */,
 				322137F724BBB046004D7148 /* CharacterDetailInteractorTests.swift in Sources */,
+				322137FE24BBC23B004D7148 /* SnapshotTests.swift in Sources */,
 				323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */,
 				324DE7E524BA4A300078E1C4 /* CharacterServiceManagerMock.swift in Sources */,
 			);

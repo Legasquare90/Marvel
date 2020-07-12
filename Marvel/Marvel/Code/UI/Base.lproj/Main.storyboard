@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +10,7 @@
         <!--Characters List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CharactersListViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharactersListViewController" id="BYZ-38-t0r" customClass="CharactersListViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,58 +373,58 @@
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="g99-jQ-dRM"/>
+                                <exclude reference="PP1-UP-Uv1"/>
                                 <exclude reference="6ke-YE-s2f"/>
                                 <exclude reference="nMU-RN-z6G"/>
-                                <exclude reference="PP1-UP-Uv1"/>
                                 <exclude reference="i3N-Lq-Xwx"/>
+                                <exclude reference="Ant-Vy-iAM"/>
                                 <include reference="27u-VA-NMa"/>
                                 <exclude reference="EF2-xq-YBp"/>
                                 <include reference="V3D-A2-LaB"/>
                                 <include reference="ihX-Kv-ji1"/>
                                 <exclude reference="tfo-OQ-0vs"/>
-                                <exclude reference="Ant-Vy-iAM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="g99-jQ-dRM"/>
+                                <exclude reference="PP1-UP-Uv1"/>
                                 <exclude reference="6ke-YE-s2f"/>
                                 <exclude reference="nMU-RN-z6G"/>
-                                <exclude reference="PP1-UP-Uv1"/>
                                 <exclude reference="i3N-Lq-Xwx"/>
+                                <exclude reference="Ant-Vy-iAM"/>
                                 <exclude reference="EF2-xq-YBp"/>
                                 <exclude reference="tfo-OQ-0vs"/>
-                                <exclude reference="Ant-Vy-iAM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="uN9-BO-SYr"/>
+                                <exclude reference="78z-DJ-IRb"/>
                                 <exclude reference="oud-5r-0AI"/>
                                 <exclude reference="xul-zM-NTL"/>
-                                <exclude reference="78z-DJ-IRb"/>
+                                <exclude reference="5Ux-ea-PpU"/>
                                 <exclude reference="27u-VA-NMa"/>
                                 <exclude reference="V3D-A2-LaB"/>
                                 <exclude reference="ihX-Kv-ji1"/>
-                                <exclude reference="5Ux-ea-PpU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="uN9-BO-SYr"/>
+                                <exclude reference="78z-DJ-IRb"/>
+                                <include reference="PP1-UP-Uv1"/>
                                 <include reference="6ke-YE-s2f"/>
                                 <include reference="nMU-RN-z6G"/>
                                 <exclude reference="oud-5r-0AI"/>
                                 <exclude reference="xul-zM-NTL"/>
-                                <exclude reference="78z-DJ-IRb"/>
-                                <include reference="PP1-UP-Uv1"/>
+                                <exclude reference="5Ux-ea-PpU"/>
+                                <include reference="Ant-Vy-iAM"/>
                                 <exclude reference="27u-VA-NMa"/>
                                 <include reference="EF2-xq-YBp"/>
                                 <exclude reference="V3D-A2-LaB"/>
                                 <exclude reference="ihX-Kv-ji1"/>
                                 <include reference="tfo-OQ-0vs"/>
-                                <exclude reference="5Ux-ea-PpU"/>
-                                <include reference="Ant-Vy-iAM"/>
                             </mask>
                         </variation>
                     </view>

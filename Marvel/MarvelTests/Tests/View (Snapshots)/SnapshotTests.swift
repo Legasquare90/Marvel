@@ -6,27 +6,23 @@
 //
 
 import XCTest
+import FBSnapshotTestCase
+@testable import Marvel
 
-class SnapshotTests: XCTestCase {
+class SnapshotTests: FBSnapshotTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func setUpWithError() throws { }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    override func tearDownWithError() throws { }
+    
+    /**
+     - Important: First, set "recordMode" to true to save a snapshot of the controller. This result in test fail, but it is normal. Then, set it to false to execute really the test.
+     */
+    func testCharactersListController() {
+        self.recordMode = false
+        
+        let controller: CharactersListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CharactersListViewController") as! CharactersListViewController
+        FBSnapshotVerifyView(controller.view, identifier: nil)
     }
 
 }
