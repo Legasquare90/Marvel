@@ -60,15 +60,21 @@ class CharacterDetailViewController: BaseViewController {
     // MARK: - IBActions
 
     @IBAction func comicCollectionLinkAction(_ sender: Any) {
-        
+        if let urlString = character.urls?.first(where: { $0.type == .comiclink })?.url, let url = URL(string: urlString) {
+            navigator.navigate(style: .openURL(url: url))
+        }
     }
     
     @IBAction func detailLinkAction(_ sender: Any) {
-        
+        if let urlString = character.urls?.first(where: { $0.type == .detail })?.url, let url = URL(string: urlString) {
+            navigator.navigate(style: .openURL(url: url))
+        }
     }
     
     @IBAction func wikiLinkAction(_ sender: Any) {
-        
+        if let urlString = character.urls?.first(where: { $0.type == .wiki })?.url, let url = URL(string: urlString) {
+            navigator.navigate(style: .openURL(url: url))
+        }
     }
     
     @IBAction func closeAction(_ sender: Any) {

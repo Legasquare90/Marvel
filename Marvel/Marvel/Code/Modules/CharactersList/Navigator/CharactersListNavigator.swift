@@ -45,6 +45,8 @@ class CharactersListNavigator: Navigator {
             originController.navigationController?.popViewController(animated: true)
         case .dismiss:
             originController.dismiss(animated: true, completion: nil)
+        case .openURL(let url):
+            UIApplication.shared.open(url)
         }
     }
 

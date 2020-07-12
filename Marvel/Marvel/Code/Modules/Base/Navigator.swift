@@ -12,6 +12,7 @@ enum Style {
     case modal
     case back
     case dismiss
+    case openURL(url: URL)
 }
 
 protocol Navigator {
