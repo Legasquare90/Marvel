@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftMessageBar
 
 enum TableSection: Int {
     case Comics = 0
@@ -53,6 +54,8 @@ class CharacterDetailViewController: BaseViewController {
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.tableFooterView = UIView()
+        
+        presenter.saveData(character: character)
         
         setLocalizableStrings()
         setCharacterData()
@@ -149,33 +152,14 @@ class CharacterDetailViewController: BaseViewController {
 
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch self.sectionSelected {
-        case .Comics:
-            return character.comics?.items?.count ?? 0
-        case .Stories:
-            return character.stories?.items?.count ?? 0
-        case .Events:
-            return character.events?.items?.count ?? 0
-        case .Series:
-            return character.series?.items?.count ?? 0
-        }
+        return presenter.numberOfRows(section: self.sectionSelected)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var name = ""
-        switch self.sectionSelected {
-        case .Comics:
-            name = character.comics?.items?[indexPath.row].name ?? ""
-        case .Stories:
-            name = character.stories?.items?[indexPath.row].name ?? ""
-        case .Events:
-            name = character.events?.items?[indexPath.row].name ?? ""
-        case .Series:
-            name = character.series?.items?[indexPath.row].name ?? ""
-        }
+        presenter.checkPagination(index: indexPath.row, section: self.sectionSelected)
 
         let basicCell = UITableViewCell()
-        basicCell.textLabel?.text = name
+        basicCell.textLabel?.text = presenter.getContentTitle(index: indexPath.row, section: self.sectionSelected)
         basicCell.textLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: .medium)
         basicCell.textLabel?.numberOfLines = 2
         return basicCell
@@ -185,7 +169,13 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
 // MARK: -
 
 extension CharacterDetailViewController: CharacterDetailPresenterOutput {
-
+    func refreshView() {
+        self.tableView.reloadData()
+    }
+    
+    func showError() {
+        SwiftMessageBar.showMessage(withTitle: "error_title".localized, message: "error_message".localized, type: .error)
+    }
 }
 
 // MARK: -

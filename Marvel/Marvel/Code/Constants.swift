@@ -43,4 +43,10 @@ struct Constants {
      Limit each request to Marvel API to return this number of contents
      */
     static let contentsPerRequest = 30
+    
+    /**
+     Limit each request to Marvel API to return this number of contents in character collections
+     */
+    static let contentsInCollectionsPerRequest = 20
+
 }

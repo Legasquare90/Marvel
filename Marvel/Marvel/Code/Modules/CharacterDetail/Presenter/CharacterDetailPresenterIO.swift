@@ -8,9 +8,13 @@
 import Foundation
 
 protocol CharacterDetailPresenterInput {
-
+    func saveData(character: Character)
+    func numberOfRows(section: TableSection) -> Int
+    func getContentTitle(index: Int, section: TableSection) -> String
+    func checkPagination(index: Int, section: TableSection)
 }
 
 protocol CharacterDetailPresenterOutput {
-
+    func refreshView()
+    func showError()
 }

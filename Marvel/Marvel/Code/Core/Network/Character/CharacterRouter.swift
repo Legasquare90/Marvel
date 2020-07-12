@@ -11,6 +11,10 @@ import Alamofire
 enum CharacterEndpoint {
     case getAllCharacters(nextPage: Int)
     case searchCharacters(search: String)
+    case getMoreComics(characterID: Int, nextPage: Int)
+    case getMoreStories(characterID: Int, nextPage: Int)
+    case getMoreEvents(characterID: Int, nextPage: Int)
+    case getMoreSeries(characterID: Int, nextPage: Int)
 }
 
 class CharacterRouter : BaseRouter {
@@ -23,13 +27,17 @@ class CharacterRouter : BaseRouter {
     
     override var method: HTTPMethod {
         switch endpoint {
-            case .getAllCharacters, .searchCharacters: return HTTPMethod.get
+            case .getAllCharacters, .searchCharacters, .getMoreComics, .getMoreStories, .getMoreEvents, .getMoreSeries: return HTTPMethod.get
         }
     }
     
     override var path: String {
         switch endpoint {
             case .getAllCharacters, .searchCharacters: return "/characters"
+            case .getMoreComics(let characterID, _): return "/characters/\(characterID)/comics"
+            case .getMoreStories(let characterID, _): return "/characters/\(characterID)/stories"
+            case .getMoreEvents(let characterID, _): return "/characters/\(characterID)/events"
+            case .getMoreSeries(let characterID, _): return "/characters/\(characterID)/series"
         }
     }
 
@@ -45,6 +53,26 @@ class CharacterRouter : BaseRouter {
                 var dict: [String : AnyObject] = [:]
                 dict.updateValue(Constants.contentsPerRequest as AnyObject, forKey: "limit")
                 dict.updateValue(search as AnyObject, forKey: "nameStartsWith")
+                return dict
+            case .getMoreComics(_, let nextPage):
+                var dict: [String : AnyObject] = [:]
+                let offset = nextPage * Constants.contentsInCollectionsPerRequest
+                dict.updateValue(offset as AnyObject, forKey: "offset")
+                return dict
+            case .getMoreStories(_, let nextPage):
+                var dict: [String : AnyObject] = [:]
+                let offset = nextPage * Constants.contentsInCollectionsPerRequest
+                dict.updateValue(offset as AnyObject, forKey: "offset")
+                return dict
+            case .getMoreEvents(_, let nextPage):
+                var dict: [String : AnyObject] = [:]
+                let offset = nextPage * Constants.contentsInCollectionsPerRequest
+                dict.updateValue(offset as AnyObject, forKey: "offset")
+                return dict
+            case .getMoreSeries(_, let nextPage):
+                var dict: [String : AnyObject] = [:]
+                let offset = nextPage * Constants.contentsInCollectionsPerRequest
+                dict.updateValue(offset as AnyObject, forKey: "offset")
                 return dict
         }
     }
