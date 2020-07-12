@@ -217,5 +217,213 @@ class CharacterServiceManagerTests: XCTestCase {
         
         expect(errorMessage) == kMockErrorMessage
     }
+    
+    func testSuccessfulPaginationComics() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let comicsWrapper = DecoderFile().decodeComicFile(name: "Comics", extensionFile: "json")
+        let mock: APIManager = NetworkManagerMock(response: comicsWrapper, error: nil)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Comic]?
+        var errorMessage: String?
+        characterServiceManager.getMoreComics(characterID: characterID, nextPage: nextPage) { (comicContainer, error) in
+            if let container = comicContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).notTo(beNil())
+        expect(errorMessage).to(beNil())
+        expect(result?.count) > 0
+    }
+    
+    func testErrorPaginationComics() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let error = MyError.error(message: kMockErrorMessage)
+        let mock: APIManager = NetworkManagerMock(response: nil, error: error)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Comic]?
+        var errorMessage: String?
+        characterServiceManager.getMoreComics(characterID: characterID, nextPage: nextPage) { (comicContainer, error) in
+            if let container = comicContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).to(beNil())
+        expect(errorMessage).notTo(beNil())
+        expect(errorMessage) == kMockErrorMessage
+    }
+    
+    func testSuccessfulPaginationEvents() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let eventsWrapper = DecoderFile().decodeEventFile(name: "Events", extensionFile: "json")
+        let mock: APIManager = NetworkManagerMock(response: eventsWrapper, error: nil)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Event]?
+        var errorMessage: String?
+        characterServiceManager.getMoreEvents(characterID: characterID, nextPage: nextPage) { (eventContainer, error) in
+            if let container = eventContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).notTo(beNil())
+        expect(errorMessage).to(beNil())
+        expect(result?.count) > 0
+    }
+    
+    func testErrorPaginationEvents() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let error = MyError.error(message: kMockErrorMessage)
+        let mock: APIManager = NetworkManagerMock(response: nil, error: error)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Event]?
+        var errorMessage: String?
+        characterServiceManager.getMoreEvents(characterID: characterID, nextPage: nextPage) { (eventContainer, error) in
+            if let container = eventContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).to(beNil())
+        expect(errorMessage).notTo(beNil())
+        expect(errorMessage) == kMockErrorMessage
+    }
+    
+    func testSuccessfulPaginationStories() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let storiesWrapper = DecoderFile().decodeStoryFile(name: "Stories", extensionFile: "json")
+        let mock: APIManager = NetworkManagerMock(response: storiesWrapper, error: nil)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Story]?
+        var errorMessage: String?
+        characterServiceManager.getMoreStories(characterID: characterID, nextPage: nextPage) { (storyContainer, error) in
+            if let container = storyContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).notTo(beNil())
+        expect(errorMessage).to(beNil())
+        expect(result?.count) > 0
+    }
+    
+    func testErrorPaginationStories() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let error = MyError.error(message: kMockErrorMessage)
+        let mock: APIManager = NetworkManagerMock(response: nil, error: error)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Story]?
+        var errorMessage: String?
+        characterServiceManager.getMoreStories(characterID: characterID, nextPage: nextPage) { (storyContainer, error) in
+            if let container = storyContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).to(beNil())
+        expect(errorMessage).notTo(beNil())
+        expect(errorMessage) == kMockErrorMessage
+    }
+    
+    func testSuccessfulPaginationSeries() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let seriesWrapper = DecoderFile().decodeSerieFile(name: "Series", extensionFile: "json")
+        let mock: APIManager = NetworkManagerMock(response: seriesWrapper, error: nil)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Serie]?
+        var errorMessage: String?
+        characterServiceManager.getMoreSeries(characterID: characterID, nextPage: nextPage) { (serieContainer, error) in
+            if let container = serieContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).notTo(beNil())
+        expect(errorMessage).to(beNil())
+        expect(result?.count) > 0
+    }
+    
+    func testErrorPaginationSeries() throws {
+        // Given
+        let nextPage = 0
+        let characterID = 1009351
+        let error = MyError.error(message: kMockErrorMessage)
+        let mock: APIManager = NetworkManagerMock(response: nil, error: error)
+        let characterServiceManager = CharacterServiceManager(networkManager: mock)
+        
+        // When
+        var result: [Serie]?
+        var errorMessage: String?
+        characterServiceManager.getMoreSeries(characterID: characterID, nextPage: nextPage) { (serieContainer, error) in
+            if let container = serieContainer {
+                result = container.results
+            }
+            if let e = error {
+                errorMessage = e.localizedDescription
+            }
+        }
+        
+        // Then
+        expect(result).to(beNil())
+        expect(errorMessage).notTo(beNil())
+        expect(errorMessage) == kMockErrorMessage
+    }
 
 }

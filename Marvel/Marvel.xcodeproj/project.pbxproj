@@ -16,6 +16,10 @@
 		321F18FD24BB09380093F579 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F18FC24BB09380093F579 /* Navigator.swift */; };
 		321F18FF24BB09630093F579 /* CharactersListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F18FE24BB09630093F579 /* CharactersListNavigator.swift */; };
 		321F190224BB28B00093F579 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F190124BB28B00093F579 /* CharacterDetailNavigator.swift */; };
+		322137EE24BB8E4D004D7148 /* Comics.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137ED24BB8E4D004D7148 /* Comics.json */; };
+		322137F024BB8EB6004D7148 /* Events.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137EF24BB8EB6004D7148 /* Events.json */; };
+		322137F224BB8F34004D7148 /* Series.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137F124BB8F34004D7148 /* Series.json */; };
+		322137F424BB8FCB004D7148 /* Stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 322137F324BB8FCB004D7148 /* Stories.json */; };
 		323CFE6124B67E240030E12B /* CharacterServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */; };
 		323CFE6424B680160030E12B /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CFE6324B680160030E12B /* NetworkManagerMock.swift */; };
 		324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7D024B9C3330078E1C4 /* Logger.swift */; };
@@ -96,6 +100,10 @@
 		321F18FC24BB09380093F579 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		321F18FE24BB09630093F579 /* CharactersListNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListNavigator.swift; sourceTree = "<group>"; };
 		321F190124BB28B00093F579 /* CharacterDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigator.swift; sourceTree = "<group>"; };
+		322137ED24BB8E4D004D7148 /* Comics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Comics.json; sourceTree = "<group>"; };
+		322137EF24BB8EB6004D7148 /* Events.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Events.json; sourceTree = "<group>"; };
+		322137F124BB8F34004D7148 /* Series.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Series.json; sourceTree = "<group>"; };
+		322137F324BB8FCB004D7148 /* Stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Stories.json; sourceTree = "<group>"; };
 		323CFE6024B67E240030E12B /* CharacterServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerTests.swift; sourceTree = "<group>"; };
 		323CFE6324B680160030E12B /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		324DE7D024B9C3330078E1C4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -252,6 +260,10 @@
 				324DE7D224BA31B00078E1C4 /* JJJ.json */,
 				32E86EEE24B7155A007AB6E1 /* MultipleResults.json */,
 				32E86EEC24B71344007AB6E1 /* NoResults.json */,
+				322137ED24BB8E4D004D7148 /* Comics.json */,
+				322137EF24BB8EB6004D7148 /* Events.json */,
+				322137F124BB8F34004D7148 /* Series.json */,
+				322137F324BB8FCB004D7148 /* Stories.json */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -694,10 +706,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				32E86EEF24B7155A007AB6E1 /* MultipleResults.json in Resources */,
+				322137EE24BB8E4D004D7148 /* Comics.json in Resources */,
 				321AE66924B7034F005A9DC1 /* Hulk.json in Resources */,
 				324DE7D724BA32F10078E1C4 /* IronSearch.json in Resources */,
 				324DE7D324BA31B00078E1C4 /* JJJ.json in Resources */,
+				322137F024BB8EB6004D7148 /* Events.json in Resources */,
+				322137F224BB8F34004D7148 /* Series.json in Resources */,
 				32E86EED24B71344007AB6E1 /* NoResults.json in Resources */,
+				322137F424BB8FCB004D7148 /* Stories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
