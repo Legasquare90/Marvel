@@ -38,13 +38,7 @@ class CharacterDetailViewController: BaseViewController {
         
         characterImageView.layer.cornerRadius = characterImageView.frame.size.height / 2
         
-        if UIDevice.current.orientation == .portrait {
-            self.nameLabel.textAlignment = .left
-            self.descriptionLabel.textAlignment = .left
-        } else {
-            self.nameLabel.textAlignment = .center
-            self.descriptionLabel.textAlignment = .center
-        }
+        checkAlignment()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -58,6 +52,11 @@ class CharacterDetailViewController: BaseViewController {
         collectionsSegmentedControl.setTitle("character_detail_table_series".localized, forSegmentAt: 3)
 
         nameLabel.text = character.name
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        checkAlignment()
     }
 
     // MARK: - IBActions
@@ -80,6 +79,18 @@ class CharacterDetailViewController: BaseViewController {
     
     @IBAction func collectionsSegmentedControlDidChange(_ sender: Any) {
         
+    }
+    
+    // MARK: - Other methods
+
+    func checkAlignment() {
+        if UIDevice.current.orientation == .portrait {
+            self.nameLabel.textAlignment = .left
+            self.descriptionLabel.textAlignment = .left
+        } else {
+            self.nameLabel.textAlignment = .center
+            self.descriptionLabel.textAlignment = .center
+        }
     }
 }
 
