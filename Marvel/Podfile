@@ -22,6 +22,7 @@ end
 
 target 'MarvelUITests' do
   commonPods
+  pod 'Nimble'
 end
 
 post_install do |installer|
