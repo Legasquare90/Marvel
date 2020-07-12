@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import SwiftMessageBar
+import DZNEmptyDataSet
 
 enum TableSection: Int {
     case Comics = 0
@@ -49,6 +50,8 @@ class CharacterDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.layoutMargins = UIEdgeInsets.zero
@@ -164,6 +167,18 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
         basicCell.textLabel?.numberOfLines = 2
         return basicCell
     }
+}
+
+// MARK: -
+
+extension CharacterDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.black]
+        let string = presenter.getEmptyTitle(section: self.sectionSelected)
+        return NSAttributedString(string: string, attributes: attributes)
+    }
+    
 }
 
 // MARK: -

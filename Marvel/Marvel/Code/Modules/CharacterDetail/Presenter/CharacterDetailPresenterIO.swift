@@ -12,6 +12,7 @@ protocol CharacterDetailPresenterInput {
     func numberOfRows(section: TableSection) -> Int
     func getContentTitle(index: Int, section: TableSection) -> String
     func checkPagination(index: Int, section: TableSection)
+    func getEmptyTitle(section: TableSection) -> String
 }
 
 protocol CharacterDetailPresenterOutput {

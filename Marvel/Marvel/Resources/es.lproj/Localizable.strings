@@ -6,6 +6,10 @@
   
 */
 
+"character_detail_empty_comics" = "Este personaje no tiene comics";
+"character_detail_empty_events" = "Este personaje no tiene eventos";
+"character_detail_empty_series" = "Este personaje no tiene series";
+"character_detail_empty_stories" = "Este personaje no tiene historias";
 "character_detail_link_comics" = "Colección";
 "character_detail_link_detail" = "Más info";
 "character_detail_link_wiki" = "Wiki";

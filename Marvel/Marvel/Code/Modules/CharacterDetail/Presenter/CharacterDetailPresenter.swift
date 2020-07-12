@@ -85,6 +85,19 @@ class CharacterDetailPresenter: CharacterDetailPresenterInput {
                 }
         }
     }
+    
+    func getEmptyTitle(section: TableSection) -> String {
+        switch section {
+            case .Comics:
+                return "character_detail_empty_comics".localized
+            case .Stories:
+                return "character_detail_empty_stories".localized
+            case .Events:
+                return "character_detail_empty_events".localized
+            case .Series:
+                return "character_detail_empty_series".localized
+        }
+    }
 
 }
 
