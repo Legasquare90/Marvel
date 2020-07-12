@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterDetailViewController: BaseViewController {
 
@@ -35,23 +36,18 @@ class CharacterDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        characterImageView.layer.cornerRadius = characterImageView.frame.size.height / 2
-        
-        checkAlignment()
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         
-        comicCollectionLinkLabel.text = "character_detail_link_comics".localized
-        detailLinkLabel.text = "character_detail_link_detail".localized
-        wikiLinkLabel.text = "character_detail_link_wiki".localized
-        collectionsSegmentedControl.setTitle("character_detail_table_comics".localized, forSegmentAt: 0)
-        collectionsSegmentedControl.setTitle("character_detail_table_stories".localized, forSegmentAt: 1)
-        collectionsSegmentedControl.setTitle("character_detail_table_events".localized, forSegmentAt: 2)
-        collectionsSegmentedControl.setTitle("character_detail_table_series".localized, forSegmentAt: 3)
-
-        nameLabel.text = character.name
+        setLocalizableStrings()
+        setCharacterData()
+        checkAlignment()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        characterImageView.layer.cornerRadius = characterImageView.frame.size.height / 2
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -83,6 +79,37 @@ class CharacterDetailViewController: BaseViewController {
     
     // MARK: - Other methods
 
+    func setCharacterData() {
+        let imageURL = String(format: "%@.%@", (character.thumbnail?.path ?? ""), (character.thumbnail?.thumbnailExtension?.rawValue ?? ""))
+        let url = URL(string: imageURL)
+        characterImageView.kf.setImage(with: url)
+        nameLabel.text = character.name
+        descriptionLabel.text = character.resultDescription
+        
+        for url in (character.urls ?? []) {
+            switch url.type {
+            case .comiclink:
+                comicCollectionLinkView.isHidden = false
+            case .detail:
+                detailLinkView.isHidden = false
+            case .wiki:
+                wikiLinkView.isHidden = false
+            default:
+                break
+            }
+        }
+    }
+    
+    func setLocalizableStrings() {
+        comicCollectionLinkLabel.text = "character_detail_link_comics".localized
+        detailLinkLabel.text = "character_detail_link_detail".localized
+        wikiLinkLabel.text = "character_detail_link_wiki".localized
+        collectionsSegmentedControl.setTitle("character_detail_table_comics".localized, forSegmentAt: 0)
+        collectionsSegmentedControl.setTitle("character_detail_table_stories".localized, forSegmentAt: 1)
+        collectionsSegmentedControl.setTitle("character_detail_table_events".localized, forSegmentAt: 2)
+        collectionsSegmentedControl.setTitle("character_detail_table_series".localized, forSegmentAt: 3)
+    }
+    
     func checkAlignment() {
         if UIDevice.current.orientation == .portrait {
             self.nameLabel.textAlignment = .left
