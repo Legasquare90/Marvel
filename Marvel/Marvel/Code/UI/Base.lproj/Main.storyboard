@@ -84,12 +84,19 @@
                                     <constraint firstItem="CaG-Bv-6vb" firstAttribute="centerX" secondItem="3N6-pm-UJ4" secondAttribute="centerX" id="WBE-af-QCs"/>
                                     <constraint firstItem="pob-Ky-xQO" firstAttribute="centerX" secondItem="3N6-pm-UJ4" secondAttribute="centerX" id="sg7-rW-Je5"/>
                                     <constraint firstItem="pob-Ky-xQO" firstAttribute="centerY" secondItem="3N6-pm-UJ4" secondAttribute="centerY" id="xAL-jO-Lkp">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="-35"/>
                                         <variation key="heightClass=compact-widthClass=regular" constant="-35"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="BYU-Gh-O6F"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BYU-Gh-O6F"/>
+                                        <exclude reference="SYI-D7-l3E"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
