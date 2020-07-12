@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.1)
+  - DZNEmptyDataSet (1.8.1)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - DZNEmptyDataSet
   - Kingfisher
   - Nimble
   - SwiftMessageBar
@@ -15,16 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DZNEmptyDataSet
     - Kingfisher
     - Nimble
     - SwiftMessageBar
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   SwiftMessageBar: eac955a042445fcafde9adcd53b66a7786b83e16
 
-PODFILE CHECKSUM: 4b2715e3e2cb563d445f2dc4c8e5a2d4d70b8af0
+PODFILE CHECKSUM: 34320742ef238dadae330d5aa0048c6a30a89bb2
 
 COCOAPODS: 1.9.3
