@@ -6,6 +6,13 @@
   
 */
 
+"character_detail_link_comics" = "Colección";
+"character_detail_link_detail" = "Más info";
+"character_detail_link_wiki" = "Wiki";
+"character_detail_table_comics" = "Comics";
+"character_detail_table_events" = "Eventos";
+"character_detail_table_series" = "Series";
+"character_detail_table_stories" = "Historias";
 "characters_list_search_placeholder" = "Buscar...";
 "error_message" = "Ha habido un problema con el servidor. Inténtelo más tarde.";
 "error_title" = "Error";

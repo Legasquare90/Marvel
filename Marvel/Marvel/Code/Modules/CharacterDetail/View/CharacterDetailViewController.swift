@@ -49,6 +49,14 @@ class CharacterDetailViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        comicCollectionLinkLabel.text = "character_detail_link_comics".localized
+        detailLinkLabel.text = "character_detail_link_detail".localized
+        wikiLinkLabel.text = "character_detail_link_wiki".localized
+        collectionsSegmentedControl.setTitle("character_detail_table_comics".localized, forSegmentAt: 0)
+        collectionsSegmentedControl.setTitle("character_detail_table_stories".localized, forSegmentAt: 1)
+        collectionsSegmentedControl.setTitle("character_detail_table_events".localized, forSegmentAt: 2)
+        collectionsSegmentedControl.setTitle("character_detail_table_series".localized, forSegmentAt: 3)
+
         nameLabel.text = character.name
     }
 
@@ -63,6 +71,10 @@ class CharacterDetailViewController: BaseViewController {
     }
     
     @IBAction func wikiLinkAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func closeAction(_ sender: Any) {
         
     }
     

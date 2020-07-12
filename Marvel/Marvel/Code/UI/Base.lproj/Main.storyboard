@@ -62,13 +62,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3N6-pm-UJ4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="pob-Ky-xQO">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_marvel" translatesAutoresizingMaskIntoConstraints="NO" id="pob-Ky-xQO">
                                         <rect key="frame" x="103.5" y="398" width="207" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pob-Ky-xQO" secondAttribute="height" multiplier="56:27" id="T1X-YW-VfX"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-Bv-6vb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_shield" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-Bv-6vb">
                                         <rect key="frame" x="172" y="530" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CaG-Bv-6vb" secondAttribute="height" multiplier="1:1" id="hOK-Lx-gXV"/>
@@ -195,7 +195,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIe-nF-MQ3">
                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2is-F0-Nqf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_book" translatesAutoresizingMaskIntoConstraints="NO" id="2is-F0-Nqf">
                                                 <rect key="frame" x="46.5" y="4" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="0V1-iC-DRt"/>
@@ -232,7 +232,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYu-Xa-rDS">
                                         <rect key="frame" x="124.5" y="0.0" width="125" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOl-8g-B3f">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_info" translatesAutoresizingMaskIntoConstraints="NO" id="eOl-8g-B3f">
                                                 <rect key="frame" x="46.5" y="4" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="W0P-oV-g7j"/>
@@ -269,7 +269,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwx-61-pUJ">
                                         <rect key="frame" x="249.5" y="0.0" width="124.5" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-2G-aDr">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_wiki" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-2G-aDr">
                                                 <rect key="frame" x="46" y="4" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="ej5-zH-6yZ"/>
@@ -310,11 +310,25 @@
                                     <constraint firstItem="xYu-Xa-rDS" firstAttribute="width" secondItem="AIe-nF-MQ3" secondAttribute="width" id="nXL-3g-m0R"/>
                                 </constraints>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-hS-K3M">
+                                <rect key="frame" x="8" y="60" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PlI-Cf-1ue"/>
+                                    <constraint firstAttribute="width" constant="30" id="xlb-XR-MG2"/>
+                                </constraints>
+                                <state key="normal" image="ico_close"/>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=regular" hidden="YES"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="qZ7-ME-eIW" eventType="touchUpInside" id="9wY-yx-Hqr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eQm-Vg-lnO" firstAttribute="bottom" secondItem="1PK-EY-RRn" secondAttribute="bottom" id="26c-Ca-YnB"/>
                             <constraint firstItem="eQm-Vg-lnO" firstAttribute="left" secondItem="JD6-A3-cBY" secondAttribute="right" constant="20" id="27u-VA-NMa"/>
+                            <constraint firstItem="LeO-hS-K3M" firstAttribute="leading" secondItem="1PK-EY-RRn" secondAttribute="leading" constant="8" id="3Js-9k-UmQ"/>
                             <constraint firstItem="dZZ-4e-lNF" firstAttribute="leading" secondItem="eQm-Vg-lnO" secondAttribute="leading" constant="8" id="3RD-y8-8p0"/>
                             <constraint firstItem="gSl-ga-bgx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bG3-K9-I4W" secondAttribute="bottom" constant="16" id="4Im-2k-eAn"/>
                             <constraint firstItem="dZZ-4e-lNF" firstAttribute="top" secondItem="1PK-EY-RRn" secondAttribute="top" constant="16" id="5Ux-ea-PpU"/>
@@ -341,6 +355,7 @@
                             <constraint firstItem="JD6-A3-cBY" firstAttribute="left" secondItem="bG3-K9-I4W" secondAttribute="left" id="kDH-aW-OrG"/>
                             <constraint firstItem="bG3-K9-I4W" firstAttribute="top" secondItem="JD6-A3-cBY" secondAttribute="bottom" constant="8" id="lcI-Q7-Kod"/>
                             <constraint firstItem="JD6-A3-cBY" firstAttribute="top" secondItem="twf-H7-HUQ" secondAttribute="top" id="nMU-RN-z6G"/>
+                            <constraint firstItem="LeO-hS-K3M" firstAttribute="top" secondItem="1PK-EY-RRn" secondAttribute="top" constant="16" id="oG9-I8-aOF"/>
                             <constraint firstItem="JD6-A3-cBY" firstAttribute="left" secondItem="1PK-EY-RRn" secondAttribute="left" constant="8" id="oud-5r-0AI"/>
                             <constraint firstItem="eQm-Vg-lnO" firstAttribute="height" secondItem="8P6-Ej-X7X" secondAttribute="height" multiplier="0.5" id="tfo-OQ-0vs"/>
                             <constraint firstItem="1PK-EY-RRn" firstAttribute="bottom" secondItem="gSl-ga-bgx" secondAttribute="bottom" constant="12" id="uN9-BO-SYr"/>
@@ -411,7 +426,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="marvel" width="561" height="268"/>
-        <image name="shield" width="122.5" height="122.5"/>
+        <image name="ico_book" width="128" height="128"/>
+        <image name="ico_close" width="64" height="64"/>
+        <image name="ico_info" width="64" height="64"/>
+        <image name="ico_wiki" width="128" height="128"/>
+        <image name="img_marvel" width="561" height="268"/>
+        <image name="img_shield" width="122.5" height="122.5"/>
     </resources>
 </document>
