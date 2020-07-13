@@ -44,3 +44,9 @@ The external libraries are included in this project using CocoaPods. In the next
 * [**Kingfisher**](https://github.com/onevcat/Kingfisher). Library used to download images.
 * [**Nimble**](https://github.com/Quick/Nimble). Library used in testing to ease the expressions used in tests.
 * [**SwiftMessageBar**](https://github.com/JanGorman/SwiftMessageBar). Library used to show message bar.
+
+***
+
+### Demo
+
+If you can't/don't want to run the code, can test the app in [Appetize](https://appetize.io/app/z14kp52wrduhaxhc3gufuwjfwg)
