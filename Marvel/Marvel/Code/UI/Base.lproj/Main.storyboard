@@ -24,7 +24,7 @@
                                             <constraint firstAttribute="height" constant="34" id="wg0-Xz-zmF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                         <connections>
                                             <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="dmL-se-DpC"/>
                                         </connections>

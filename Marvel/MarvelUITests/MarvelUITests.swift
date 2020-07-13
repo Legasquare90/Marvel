@@ -96,4 +96,16 @@ class MarvelUITests: XCTestCase {
         expect(closeButton.exists) == true
     }
 
+    func testDismissKeyboard() throws {
+        let app = XCUIApplication()
+        app.launch()
+                
+        app.textFields.firstMatch.tap()
+        app.textFields.firstMatch.typeText("Iron")
+                
+        app.keyboards.buttons["Done"].tap()
+        
+        expect(app.keyboards.buttons.count) == 0
+    }
+
 }

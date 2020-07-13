@@ -39,6 +39,7 @@ class CharactersListViewController: BaseViewController {
         
         searchIndicator.isHidden = true
         
+        searchTextField.delegate = self
         searchTextField.placeholder = "characters_list_search_placeholder".localized
         searchTextField.placeHolderColor = UIColor.darkGray
         
@@ -111,6 +112,15 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
         if let character = presenter.getCharacter(index: indexPath.row) {
             navigator.navigate(to: .showDetail(character: character), style: .modal)
         }
+    }
+}
+
+// MARK: - UITextField
+
+extension CharactersListViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
