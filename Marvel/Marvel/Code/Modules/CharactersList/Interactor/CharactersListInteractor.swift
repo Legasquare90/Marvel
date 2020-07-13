@@ -13,6 +13,8 @@ class CharactersListInteractor: CharactersListInteractorInput {
     var charactersWithExtraSearch: [Character] = []
     var nextPage: Int = 0
     
+    // MARK: - Architecture
+
     private var characterServiceManager: CharacterServiceManager?
     private var presenter: CharactersListInteractorOutput?
 
@@ -21,6 +23,8 @@ class CharactersListInteractor: CharactersListInteractorInput {
         self.characterServiceManager = characterServiceManager ?? CharacterServiceManager()
     }
     
+    // MARK: - CharactersListInteractorInput
+
     func getCharacters() {
         characterServiceManager?.getCharacters(nextPage: nextPage) { (characterContainer, error) in
             if let _ = error {
@@ -54,6 +58,8 @@ class CharactersListInteractor: CharactersListInteractorInput {
         }
     }
     
+    // MARK: - Other methods
+
     func addNewCharacters(charactersReceived: [Character]) {
         charactersReceived.forEach { newCharacter in
             self.charactersWithExtraSearch.removeAll { character in

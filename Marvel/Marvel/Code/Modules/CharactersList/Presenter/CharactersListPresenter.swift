@@ -86,7 +86,7 @@ class CharactersListPresenter: CharactersListPresenterInput {
     
 }
 
-// MARK: -
+// MARK: - CharactersListInteractorOutput
 
 extension CharactersListPresenter: CharactersListInteractorOutput {
     func charactersReceived() {

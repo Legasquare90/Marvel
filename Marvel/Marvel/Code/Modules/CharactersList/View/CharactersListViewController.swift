@@ -86,7 +86,7 @@ class CharactersListViewController: BaseViewController {
 
 }
 
-// MARK: -
+// MARK: - UICollectionView
 
 extension CharactersListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,7 +114,7 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
     }
 }
 
-// MARK: -
+// MARK: - CharactersListPresenterOutput
 
 extension CharactersListViewController: CharactersListPresenterOutput {
     func refreshView() {
@@ -132,7 +132,7 @@ extension CharactersListViewController: CharactersListPresenterOutput {
     }
 }
 
-// MARK: -
+// MARK: - CharactersListNavigatorDelegate
 
 extension CharactersListViewController: CharactersListNavigatorDelegate {
 

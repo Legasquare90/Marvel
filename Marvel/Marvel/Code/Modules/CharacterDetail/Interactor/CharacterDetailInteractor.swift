@@ -31,7 +31,7 @@ class CharacterDetailInteractor: CharacterDetailInteractorInput {
         self.characterServiceManager = characterServiceManager ?? CharacterServiceManager()
     }
 
-    // MARK: - CharactersListInteractorInput
+    // MARK: - CharacterDetailInteractorInput
 
     func getMoreComics() {
         characterServiceManager?.getMoreComics(characterID: characterID, nextPage: nextComicPage, completion: { (comicContainer, error) in

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UITextField{
+extension UITextField {
     @IBInspectable var placeHolderColor: UIColor? {
         get {
             return self.placeHolderColor

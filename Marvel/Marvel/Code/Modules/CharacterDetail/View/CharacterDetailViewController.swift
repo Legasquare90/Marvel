@@ -151,7 +151,7 @@ class CharacterDetailViewController: BaseViewController {
     }
 }
 
-// MARK: -
+// MARK: - UITableView
 
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,7 +169,7 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
 }
 
-// MARK: -
+// MARK: - DZNEmptyDataSet
 
 extension CharacterDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
@@ -181,7 +181,7 @@ extension CharacterDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetD
     
 }
 
-// MARK: -
+// MARK: - CharacterDetailPresenterOutput
 
 extension CharacterDetailViewController: CharacterDetailPresenterOutput {
     func refreshView() {
@@ -193,7 +193,7 @@ extension CharacterDetailViewController: CharacterDetailPresenterOutput {
     }
 }
 
-// MARK: -
+// MARK: - CharacterDetailNavigatorDelegate
 
 extension CharacterDetailViewController: CharacterDetailNavigatorDelegate {
 

@@ -7,6 +7,8 @@
 
 import UIKit
 
+let RotationAnimationKey = "rotationAnimation"
+
 extension UIView {
     func startRotation() {
         let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -14,11 +16,11 @@ extension UIView {
         rotation.duration = 2
         rotation.isCumulative = true
         rotation.repeatCount = Float.greatestFiniteMagnitude
-        self.layer.add(rotation, forKey: "rotationAnimation")
+        self.layer.add(rotation, forKey: RotationAnimationKey)
     }
     
     func stopRotation() {
-        self.layer.removeAnimation(forKey: "rotationAnimation")
+        self.layer.removeAnimation(forKey: RotationAnimationKey)
     }
     
     func dismissScalingAndMovingDown(scale: CGFloat, verticalPosition: CGFloat) {

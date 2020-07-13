@@ -11,6 +11,8 @@ This project contains the development of an app to list the Marvel universe char
 * App include a **logger** to print (only in debug level) the API requests. 
 * The opening of the app includes **animations** to improve user experience while is loading the data of the first API request.
 * App includes several **tests**, with unit tests and UI tests, among others.
+* App is **localized** and it's available both English and Spanish.
+* Third party libraries **acknowledgements** can be seen in iOS settings.
 
 ***
 

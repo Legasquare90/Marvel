@@ -23,7 +23,7 @@ class CharacterDetailPresenter: CharacterDetailPresenterInput {
         self.interactor = interactor ?? makeInteractor()
     }
     
-    // MARK: - CharactersListPresenterInput
+    // MARK: - CharacterDetailPresenterInput
     
     func saveData(character: Character) {
         interactor?.characterID = character.characterID ?? 0
@@ -101,7 +101,7 @@ class CharacterDetailPresenter: CharacterDetailPresenterInput {
 
 }
 
-// MARK: -
+// MARK: - CharacterDetailInteractorOutput
 
 extension CharacterDetailPresenter: CharacterDetailInteractorOutput {
     func refreshData() {
