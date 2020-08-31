@@ -18,7 +18,7 @@ protocol CharactersListPresenterInput {
     func checkPagination(index: Int)
 }
 
-protocol CharactersListPresenterOutput {
+protocol CharactersListPresenterOutput: class {
     func refreshView()
     func searchFinished()
     func showError()

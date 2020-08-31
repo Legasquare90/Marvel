@@ -12,7 +12,7 @@ class CharacterDetailPresenter: CharacterDetailPresenterInput {
     // MARK: - Architecture
 
     private var interactor: CharacterDetailInteractorInput?
-    private var viewInterface: CharacterDetailPresenterOutput?
+    private weak var viewInterface: CharacterDetailPresenterOutput?
     
     private func makeInteractor() -> CharacterDetailInteractorInput {
         return CharacterDetailInteractor(presenter: self)

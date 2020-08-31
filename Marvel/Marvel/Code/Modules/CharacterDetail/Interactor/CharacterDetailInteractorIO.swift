@@ -26,7 +26,7 @@ protocol CharacterDetailInteractorInput {
     func getMoreSeries()
 }
 
-protocol CharacterDetailInteractorOutput {
+protocol CharacterDetailInteractorOutput: class {
     func refreshData()
     func showError()
 }

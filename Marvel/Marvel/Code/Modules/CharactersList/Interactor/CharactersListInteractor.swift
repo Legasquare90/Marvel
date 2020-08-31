@@ -16,7 +16,7 @@ class CharactersListInteractor: CharactersListInteractorInput {
     // MARK: - Architecture
 
     private var characterServiceManager: CharacterServiceManager?
-    private var presenter: CharactersListInteractorOutput?
+    private weak var presenter: CharactersListInteractorOutput?
 
     init(presenter: CharactersListInteractorOutput?, characterServiceManager: CharacterServiceManager? = nil) {
         self.presenter = presenter

@@ -24,7 +24,7 @@ class CharacterDetailInteractor: CharacterDetailInteractorInput {
     // MARK: - Architecture
 
     private var characterServiceManager: CharacterServiceManager?
-    private var presenter: CharacterDetailInteractorOutput?
+    private weak var presenter: CharacterDetailInteractorOutput?
 
     init(presenter: CharacterDetailInteractorOutput?, characterServiceManager: CharacterServiceManager? = nil) {
         self.presenter = presenter

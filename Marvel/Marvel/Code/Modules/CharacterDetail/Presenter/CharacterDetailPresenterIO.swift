@@ -15,7 +15,7 @@ protocol CharacterDetailPresenterInput {
     func getEmptyTitle(section: TableSection) -> String
 }
 
-protocol CharacterDetailPresenterOutput {
+protocol CharacterDetailPresenterOutput: class {
     func refreshView()
     func showError()
 }

@@ -15,7 +15,7 @@ class CharactersListPresenter: CharactersListPresenterInput {
     // MARK: - Architecture
 
     private var interactor: CharactersListInteractorInput?
-    private var viewInterface: CharactersListPresenterOutput?
+    private weak var viewInterface: CharactersListPresenterOutput?
     
     private func makeInteractor() -> CharactersListInteractorInput {
         return CharactersListInteractor(presenter: self)

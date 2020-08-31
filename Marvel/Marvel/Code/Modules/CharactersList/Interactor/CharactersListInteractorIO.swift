@@ -16,7 +16,7 @@ protocol CharactersListInteractorInput {
     func searchCharacters(search: String)
 }
 
-protocol CharactersListInteractorOutput {
+protocol CharactersListInteractorOutput: class {
     func charactersReceived()
     func searchFinished(search: String)
     func showError()
