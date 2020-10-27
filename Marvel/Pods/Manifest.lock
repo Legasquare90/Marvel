@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.3.0)
   - DZNEmptyDataSet (1.8.1)
   - iOSSnapshotTestCase (6.2.0):
     - iOSSnapshotTestCase/SwiftSupport (= 6.2.0)
   - iOSSnapshotTestCase/Core (6.2.0)
   - iOSSnapshotTestCase/SwiftSupport (6.2.0):
     - iOSSnapshotTestCase/Core
-  - Kingfisher (5.14.0):
-    - Kingfisher/Core (= 5.14.0)
-  - Kingfisher/Core (5.14.0)
-  - Nimble (8.1.1)
-  - SwiftMessageBar (5.6.0)
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - Nimble (9.0.0)
+  - SwiftMessageBar (5.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -30,13 +30,13 @@ SPEC REPOS:
     - SwiftMessageBar
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
-  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
-  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
-  SwiftMessageBar: eac955a042445fcafde9adcd53b66a7786b83e16
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  SwiftMessageBar: bb93132e3cd4c8896a971df1b425a587bc5e26ae
 
 PODFILE CHECKSUM: 4813eceb93febbd72607bf9f2813668da3235b01
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

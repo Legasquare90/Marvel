@@ -1130,7 +1130,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20200714;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = "Marvel/Supporting Files/PRO/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1138,7 +1138,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.jacm.Marvel;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal-marvel-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1152,7 +1152,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20200714;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = "Marvel/Supporting Files/PRO/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1160,7 +1160,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.jacm.Marvel;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal-marvel-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1174,7 +1174,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1197,7 +1197,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1218,8 +1218,10 @@
 			baseConfigurationReference = DF81AD1E4E27CEA9368F4857 /* Pods-MarvelUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = MarvelUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1228,6 +1230,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.jacm.MarvelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Marvel;
@@ -1239,8 +1243,10 @@
 			baseConfigurationReference = AFB512983B2501CE43B5F257 /* Pods-MarvelUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2P57FYFZ4;
+				DEVELOPMENT_TEAM = MDH593987K;
 				INFOPLIST_FILE = MarvelUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1249,6 +1255,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.jacm.MarvelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Marvel;

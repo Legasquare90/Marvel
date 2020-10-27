@@ -19,7 +19,7 @@ class SnapshotTests: FBSnapshotTestCase {
      - Important: First, set "recordMode" to true to save a snapshot of the controller. This result in test fail, but it is normal. Then, set it to false to execute really the test.
      */
     func testCharactersListController() {
-        self.recordMode = false
+        self.recordMode = true
         
         let controller: CharactersListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CharactersListViewController") as! CharactersListViewController
         FBSnapshotVerifyView(controller.view, identifier: nil)
