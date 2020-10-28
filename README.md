@@ -7,6 +7,7 @@ This project contains the development of an app to list the Marvel universe char
 * All project is coded with **Swift 5**
 * UI is built using only **Autolayout**. SwiftUI is not used in the project.
 * The app can be used both **iPhone and iPad**, with at least iOS 13.0, and both **portrait and landscape orientations**.
+* Available in **Dark Mode**.
 * API requests include a **retry policy** to avoid errors and improve user experience. Also, all requests include **pagination**.
 * App include a **logger** to print (only in debug level) the API requests. 
 * The opening of the app includes **animations** to improve user experience while is loading the data of the first API request.

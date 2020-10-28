@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "shield-removebg-preview.png",
+      "filename" : "book_dark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "shield-removebg-preview-1.png",
+      "filename" : "book_dark-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "shield-removebg-preview-2.png",
+      "filename" : "book_dark-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

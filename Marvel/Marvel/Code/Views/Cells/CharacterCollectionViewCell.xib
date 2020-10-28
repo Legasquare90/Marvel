@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,12 +25,16 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobezno" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="WQI-DT-Bvw">
                         <rect key="frame" x="8" y="84" width="104" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="lgX-ID-qMa"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="WQI-DT-Bvw" secondAttribute="bottom" constant="4" id="7Mp-yB-3KG"/>
@@ -38,10 +42,8 @@
                 <constraint firstItem="cLe-5k-Buz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="FnY-IH-fBP"/>
                 <constraint firstItem="WQI-DT-Bvw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="JXV-Uf-PgN"/>
                 <constraint firstItem="WQI-DT-Bvw" firstAttribute="top" secondItem="cLe-5k-Buz" secondAttribute="bottom" constant="4" id="aIW-pw-JXR"/>
-                <constraint firstItem="cLe-5k-Buz" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.6" id="s9J-st-Iau"/>
                 <constraint firstItem="cLe-5k-Buz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="s9M-0Z-ryC"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="139" height="130"/>
             <connections>
                 <outlet property="characterImageView" destination="cLe-5k-Buz" id="mhc-Xi-a5x"/>

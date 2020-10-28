@@ -42,6 +42,9 @@ class CharactersListViewController: BaseViewController {
         searchTextField.delegate = self
         searchTextField.placeholder = "characters_list_search_placeholder".localized
         searchTextField.placeHolderColor = UIColor.darkGray
+        searchTextField.textColor = UIColor.black
+        
+        loadingView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? UIColor.black : UIColor.white
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -80,7 +83,7 @@ class CharactersListViewController: BaseViewController {
         if !isLoadingViewHidden {
             isLoadingViewHidden = true
             spinnerImageView.stopRotation()
-            let largeSide = UIDevice.current.orientation == .portrait ? self.view.frame.size.height : self.view.frame.size.width
+            let largeSide = (UIDevice.current.orientation != .landscapeLeft && UIDevice.current.orientation != .landscapeRight) ? self.view.frame.size.height : self.view.frame.size.width
             loadingView.dismissScalingAndMovingDown(scale: 0.7, verticalPosition: largeSide * 1.5)
         }
     }
@@ -99,11 +102,12 @@ extension CharactersListViewController: UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCollectionViewCell", for: indexPath) as! CharacterCollectionViewCell
         let design = presenter.getDesign(index: indexPath.row)
         cell.setupCell(design: design)
+        cell.contentView.layoutSubviews()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let largeSide = UIDevice.current.orientation == .portrait ? collectionView.frame.size.width : collectionView.frame.size.height
+        let largeSide = (UIDevice.current.orientation != .landscapeLeft && UIDevice.current.orientation != .landscapeRight) ? collectionView.frame.size.width : collectionView.frame.size.height
         let size = (largeSide - offsetCollection) / CGFloat(cellsPerRow)
         return CGSize(width: size, height: size)
     }

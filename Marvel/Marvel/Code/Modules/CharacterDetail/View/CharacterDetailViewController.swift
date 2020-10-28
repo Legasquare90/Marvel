@@ -30,6 +30,10 @@ class CharacterDetailViewController: BaseViewController {
     @IBOutlet weak var detailLinkLabel: UILabel!
     @IBOutlet weak var wikiLinkView: UIView!
     @IBOutlet weak var wikiLinkLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var comicCollectionLinkImage: UIImageView!
+    @IBOutlet weak var detailLinkImage: UIImageView!
+    @IBOutlet weak var wikiLinkImage: UIImageView!
     
     var character: Character!
     
@@ -57,6 +61,18 @@ class CharacterDetailViewController: BaseViewController {
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.tableFooterView = UIView()
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            closeButton.setImage(UIImage(named: "ico_close_dark_mode"), for: .normal)
+            comicCollectionLinkImage.image = UIImage(named: "ico_book_dark_mode")
+            detailLinkImage.image = UIImage(named: "ico_info_dark_mode")
+            wikiLinkImage.image = UIImage(named: "ico_wiki_dark_mode")
+        } else {
+            closeButton.setImage(UIImage(named: "ico_close"), for: .normal)
+            comicCollectionLinkImage.image = UIImage(named: "ico_book")
+            detailLinkImage.image = UIImage(named: "ico_info")
+            wikiLinkImage.image = UIImage(named: "ico_wiki")
+        }
         
         presenter.saveData(character: character)
         
@@ -174,7 +190,8 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
 extension CharacterDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.black]
+        let color = traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0, weight: .semibold), NSAttributedString.Key.foregroundColor: color]
         let string = presenter.getEmptyTitle(section: self.sectionSelected)
         return NSAttributedString(string: string, attributes: attributes)
     }

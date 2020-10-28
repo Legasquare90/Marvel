@@ -27,9 +27,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.characterImageView.layer.cornerRadius = self.characterImageView.frame.size.height / 2
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        characterImageView.layer.cornerRadius = self.characterImageView.frame.size.height / 2
+        characterImageView.clipsToBounds = true
     }
     
     func setupCell(design: CharacterCellDesign) {
