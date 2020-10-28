@@ -50,4 +50,4 @@ The external libraries are included in this project using CocoaPods. In the next
 
 ### Demo
 
-If you can't/don't want to run the code, can test the app in [Appetize](https://appetize.io/app/z14kp52wrduhaxhc3gufuwjfwg)
+If you can't/don't want to run the code, can test the app in [Appetize](https://appetize.io/app/9k5mka22tp06qv1nj99haf1tac)
