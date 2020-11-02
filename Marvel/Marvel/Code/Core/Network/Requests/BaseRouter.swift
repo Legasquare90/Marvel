@@ -8,37 +8,18 @@
 import Foundation
 import Alamofire
 
-public typealias JSONDictionary = [String: AnyObject]
 typealias APIParams = [String : AnyObject]?
 
-protocol APIConfiguration {
+protocol BaseRouter {
     var method: HTTPMethod { get }
-    var encoding: ParameterEncoding? { get }
+    var encoding: ParameterEncoding { get }
     var path: String { get }
     var parameters: APIParams { get }
     var baseUrl: String { get }
     var headers: [String:String] { get }
 }
 
-class BaseRouter : URLRequestConvertible, APIConfiguration {
-    
-    init() {}
-    
-    var method: HTTPMethod {
-        fatalError("Must be overridden in subclass")
-    }
-    
-    var encoding: ParameterEncoding? {
-        fatalError("Must be overridden in subclass")
-    }
-    
-    var path: String {
-        fatalError("Must be overridden in subclass")
-    }
-    
-    var parameters: APIParams {
-        fatalError("Must be overridden in subclass")
-    }
+extension BaseRouter {
     
     var baseUrl: String {
         let baseUrl = URLS.Server
@@ -46,7 +27,7 @@ class BaseRouter : URLRequestConvertible, APIConfiguration {
     }
     
     var headers: [String : String] {
-        fatalError("Must be overridden in subclass")
+        fatalError("Override if needed")
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -68,10 +49,10 @@ class BaseRouter : URLRequestConvertible, APIConfiguration {
         params["apikey"] = publicKey as AnyObject
         params["hash"] = hash as AnyObject
         
-        if let encoding = encoding {
+        do {
             return try encoding.encode(urlRequest, with: params)
+        } catch {
+            return urlRequest
         }
-        
-        return urlRequest
     }
 }

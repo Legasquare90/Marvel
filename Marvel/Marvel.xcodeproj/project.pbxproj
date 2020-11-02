@@ -35,7 +35,7 @@
 		324DE7E524BA4A300078E1C4 /* CharacterServiceManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7E424BA4A300078E1C4 /* CharacterServiceManagerMock.swift */; };
 		324DE7EA24BA52EC0078E1C4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DE7E924BA52EC0078E1C4 /* BaseViewController.swift */; };
 		325BB9A924B6341400912AC9 /* CharacterServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9A824B6341400912AC9 /* CharacterServiceManager.swift */; };
-		325BB9AC24B6343200912AC9 /* CharacterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9AB24B6343200912AC9 /* CharacterRouter.swift */; };
+		325BB9AC24B6343200912AC9 /* CharactersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9AB24B6343200912AC9 /* CharactersListRouter.swift */; };
 		325BB9B024B64E5C00912AC9 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9AF24B64E5C00912AC9 /* Story.swift */; };
 		325BB9B224B64EC800912AC9 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9B124B64EC800912AC9 /* Thumbnail.swift */; };
 		325BB9B424B64FA000912AC9 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BB9B324B64FA000912AC9 /* Link.swift */; };
@@ -73,6 +73,9 @@
 		4FDF41D496D410022DCAFE6E /* Pods_MarvelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0990DEE32B6CA6A91DDA8D7 /* Pods_MarvelUITests.framework */; };
 		75575A52D131D2D07377BAF1 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EC4594E076CAEADBC67E5F /* Pods_Marvel.framework */; };
 		7F8792D063512188E77BC04D /* Pods_MarvelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E23081E13B851B70E7EBA3A /* Pods_MarvelTests.framework */; };
+		A9799CCC2550725800819ABB /* CharactersSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799CCB2550725800819ABB /* CharactersSearchRouter.swift */; };
+		A9799CD42550728800819ABB /* CharactersContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799CD32550728800819ABB /* CharactersContentRouter.swift */; };
+		A9799CD92550732F00819ABB /* CharactersRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799CD82550732F00819ABB /* CharactersRouterFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +126,7 @@
 		324DE7E424BA4A300078E1C4 /* CharacterServiceManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManagerMock.swift; sourceTree = "<group>"; };
 		324DE7E924BA52EC0078E1C4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		325BB9A824B6341400912AC9 /* CharacterServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceManager.swift; sourceTree = "<group>"; };
-		325BB9AB24B6343200912AC9 /* CharacterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRouter.swift; sourceTree = "<group>"; };
+		325BB9AB24B6343200912AC9 /* CharactersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouter.swift; sourceTree = "<group>"; };
 		325BB9AF24B64E5C00912AC9 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		325BB9B124B64EC800912AC9 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		325BB9B324B64FA000912AC9 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
@@ -165,6 +168,9 @@
 		32E86F1D24B7D21E007AB6E1 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		61381F8E20D943A772C1CF99 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
 		85A5C4677950800844FC47D0 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
+		A9799CCB2550725800819ABB /* CharactersSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSearchRouter.swift; sourceTree = "<group>"; };
+		A9799CD32550728800819ABB /* CharactersContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersContentRouter.swift; sourceTree = "<group>"; };
+		A9799CD82550732F00819ABB /* CharactersRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouterFactory.swift; sourceTree = "<group>"; };
 		AFB512983B2501CE43B5F257 /* Pods-MarvelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelUITests/Pods-MarvelUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C91AFF2B272548428C57FF /* Pods-MarvelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF81AD1E4E27CEA9368F4857 /* Pods-MarvelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelUITests/Pods-MarvelUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -386,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				325BB9A824B6341400912AC9 /* CharacterServiceManager.swift */,
-				325BB9AB24B6343200912AC9 /* CharacterRouter.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -513,10 +518,9 @@
 		326D427324B3ADEA007D645B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				326D427824B3C5F9007D645B /* APIManager.swift */,
-				326D427B24B3C95B007D645B /* BaseRouter.swift */,
 				324DE7D024B9C3330078E1C4 /* Logger.swift */,
-				325BB9A724B633F400912AC9 /* Character */,
+				A9CF14C625502ABF00A30DDA /* Requests */,
+				A9799CDD2550752500819ABB /* ServiceManager */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -608,6 +612,43 @@
 				32E86F0424B7633A007AB6E1 /* CharacterCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A908D0BD25507ECC0029B4E5 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				325BB9AB24B6343200912AC9 /* CharactersListRouter.swift */,
+				A9799CCB2550725800819ABB /* CharactersSearchRouter.swift */,
+				A9799CD32550728800819ABB /* CharactersContentRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		A9799CC725505E7C00819ABB /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				A9799CD82550732F00819ABB /* CharactersRouterFactory.swift */,
+				A908D0BD25507ECC0029B4E5 /* Routers */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		A9799CDD2550752500819ABB /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				326D427824B3C5F9007D645B /* APIManager.swift */,
+				325BB9A724B633F400912AC9 /* Character */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		A9CF14C625502ABF00A30DDA /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				326D427B24B3C95B007D645B /* BaseRouter.swift */,
+				A9799CC725505E7C00819ABB /* Character */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -903,11 +944,14 @@
 				326D427924B3C5F9007D645B /* APIManager.swift in Sources */,
 				325BB9A924B6341400912AC9 /* CharacterServiceManager.swift in Sources */,
 				326D423F24B39B46007D645B /* CharactersListViewController.swift in Sources */,
+				A9799CD92550732F00819ABB /* CharactersRouterFactory.swift in Sources */,
 				32101E4524BA6BC900EB5598 /* CharacterDetailInteractorIO.swift in Sources */,
 				32E86F1E24B7D21E007AB6E1 /* UITextFieldExtension.swift in Sources */,
 				325BB9B424B64FA000912AC9 /* Link.swift in Sources */,
 				324DE7D124B9C3330078E1C4 /* Logger.swift in Sources */,
 				325BB9B824B6501E00912AC9 /* Serie.swift in Sources */,
+				A9799CD42550728800819ABB /* CharactersContentRouter.swift in Sources */,
+				A9799CCC2550725800819ABB /* CharactersSearchRouter.swift in Sources */,
 				326D427C24B3C95B007D645B /* BaseRouter.swift in Sources */,
 				321F18FD24BB09380093F579 /* Navigator.swift in Sources */,
 				32101E4324BA6BB800EB5598 /* CharacterDetailInteractor.swift in Sources */,
@@ -915,7 +959,7 @@
 				32E86F1C24B7CACB007AB6E1 /* StringExtension.swift in Sources */,
 				32E86EFA24B72DE2007AB6E1 /* CharactersListInteractor.swift in Sources */,
 				321F190224BB28B00093F579 /* CharacterDetailNavigator.swift in Sources */,
-				325BB9AC24B6343200912AC9 /* CharacterRouter.swift in Sources */,
+				325BB9AC24B6343200912AC9 /* CharactersListRouter.swift in Sources */,
 				325BB9BA24B6504E00912AC9 /* Comic.swift in Sources */,
 				326D427624B3B287007D645B /* Character.swift in Sources */,
 				326D423B24B39B46007D645B /* AppDelegate.swift in Sources */,
